@@ -1,0 +1,14 @@
+#!/bin/sh
+
+BASE="$(pwd)"
+SELF="$(realpath $0)"
+ROOT="$(dirname $SELF)"
+
+export PATH="$PATH:/sbin:/usr/sbin"
+export PAGER="less -XFe"
+export EDITOR="vim"
+export PYTHONPATH="$ROOT"
+export CLISH_PATH="$ROOT/xml-basic:$ROOT/xml-development:$ROOT/xml-linux:$ROOT/xml-main"
+
+# run clish
+$WRAP clish $@

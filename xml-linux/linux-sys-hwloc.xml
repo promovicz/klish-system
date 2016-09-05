@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <VIEW name="main">
+
+	  <COMMAND name="show system topology"
+			       help="Show system topology">
+	    <PARAM name="verbose"
+			       help="Verbose output"
+			       ptype="string"
+			       value="verbose"
+			       optional="true"/>
+	    <ACTION>
+		    format="console"
+		    options=""
+		    if [ -n "${verbose}" ]; then
+		      options="$options -v"
+		    fi
+		    lstopo --of $format $options
+	    </ACTION>
+	  </COMMAND>
+
+  </VIEW>
+
+</CLISH_MODULE>

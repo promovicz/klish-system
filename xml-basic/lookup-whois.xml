@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <VIEW name="main">
+
+	  <COMMAND name="lookup whois"
+			       help="Perform whois lookup"
+			       interrupt="true">
+	    <PARAM name="object"
+			       help="Query"
+			       ptype="string"/>
+	    <PARAM name="server"
+			       help="Server to query"
+			       ptype="string"
+			       prefix="server"
+			       optional="true"/>
+	    <PARAM name="port"
+			       help="Port of server"
+			       ptype="string"
+			       prefix="port"
+			       optional="true"/>
+	    <PARAM name="legal"
+			       help="Show legalese"
+			       ptype="string"
+			       value="legal"
+			       optional="true"/>
+	    <ACTION>
+		    options=""
+		    if [ -n "${server}" ]; then
+		      options="$options -h ${server}"
+		    fi
+		    if [ -n "${port}" ]; then
+		      options="$options -p ${port}"
+		    fi
+		    if [ -z "${legal}" ]; then
+		      options="$options -H"
+		    fi
+		    whois $options "${object}"
+		  </ACTION>
+	  </COMMAND>
+
+  </VIEW>
+
+</CLISH_MODULE>

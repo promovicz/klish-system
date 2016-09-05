@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <VIEW name="main">
+
+	  <COMMAND name="show storage"
+			       help="Show storage information"/>
+
+	  <COMMAND name="show storage device"
+			       help="Show storage devices">
+	    <ACTION>lsblk -a</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="show storage device activity"
+			       help="Show device activity">
+	    <ACTION>iostat</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="show storage device filesystem"
+			       help="Show device filesystems">
+	    <ACTION>lsblk -f</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="show storage device statistics"
+			       help="Show device statistics">
+	    <ACTION>vmstat -d</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="show storage file"
+			       help="Show file information"/>
+
+	  <COMMAND name="show storage file lock"
+			       help="Show file locks">
+	    <ACTION>lslocks</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="show storage mounts"
+			       help="Show storage mounts">
+	    <ACTION>findmnt</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="show storage usage"
+			       help="Show storage usage">
+	    <ACTION>df -h</ACTION>
+	  </COMMAND>
+
+  </VIEW>
+
+</CLISH_MODULE>

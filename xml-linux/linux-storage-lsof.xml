@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <VIEW name="main">
+
+	  <COMMAND name="show storage file handle"
+			       help="Show file handles">
+      <PARAM name="file"
+             help="Show handles for file"
+             prefix="file"
+             ptype="file"
+             optional="true"/>
+      <PARAM name="program"
+             help="Show handles for program"
+             prefix="program"
+             ptype="string"
+             optional="true"/>
+      <PARAM name="user"
+             help="Show handles for user"
+             prefix="user"
+             ptype="user"
+             optional="true"/>
+	    <ACTION>
+        file=""
+        options=""
+        if [ -n "${file}" ]; then
+          file="${file}"
+        fi
+        if [ -n "${program}" ]; then
+          options="$options -c ${program}"
+        fi
+        if [ -n "${user}" ]; then
+          options="$options -u ${user}"
+        fi
+        lsof $options -- $file
+      </ACTION>
+	  </COMMAND>
+
+  </VIEW>
+
+</CLISH_MODULE>

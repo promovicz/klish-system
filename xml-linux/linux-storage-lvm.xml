@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <VIEW name="main">
+
+	  <COMMAND name="show lvm"
+			       help="Show LVM information"/>
+
+	  <COMMAND name="show lvm group"
+			       help="Show volume group information">
+	    <PARAM name="detail"
+			       help="Detailed information"
+			       ptype="string"
+			       value="detail"
+			       optional="true"/>
+	    <PARAM name="name"
+			       help="Name of volume group"
+			       ptype="string"
+			       optional="true"/>
+	    <ACTION>
+		    detail="${detail}"
+		    if [ -n "${name}" ]; then
+		      detail=detail
+		    fi
+		    if [ -n "$detail" ]; then
+		      vgdisplay ${name}
+		    else
+		      vgs ${name}
+		    fi
+	    </ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="show lvm logical"
+			       help="Show logical volume information">
+	    <PARAM name="detail"
+			       help="Detailed information"
+			       ptype="string"
+			       value="detail"
+			       optional="true"/>
+	    <PARAM name="path"
+			       help="Path of logical volume"
+			       ptype="string"
+			       optional="true"/>
+	    <ACTION>
+		    if [ -n "${path}" ]; then
+		    detail=detail
+		    fi
+		    if [ -n "${detail}" ]; then
+		    lvdisplay ${path}
+		    else
+		    lvs ${path}
+		    fi
+	    </ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="show lvm physical"
+			       help="Show physical volume information">
+	    <PARAM name="detail"
+			       help="Detailed information"
+			       ptype="string"
+			       value="detail"
+			       optional="true"/>
+	    <PARAM name="device"
+			       help="Device of physical volume"
+			       ptype="string"
+			       optional="true"/>
+	    <ACTION>
+		    if [ -n "${device}" ]; then
+		      detail=detail
+		    fi
+		    if [ -n "${detail}" ]; then
+		      pvdisplay ${device}
+		    else
+		      pvs ${device}
+		    fi
+	    </ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="request lvm"
+			       help="Request LVM operations"/>
+
+  </VIEW>
+
+</CLISH_MODULE>

@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <VIEW name="main">
+
+	  <COMMAND name="show network interface"
+			       help="Show network interfaces">
+	    <PARAM name="interface"
+			       help="Interface to show"
+			       ptype="net_interface"
+			       optional="true"/>
+	    <ACTION>
+		    options=""
+		    if [ -n "${interface}" ]; then
+		      options="$options dev ${interface}"
+		    fi
+		    ip address list $options
+	    </ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="show network namespace"
+			       help="Show network namespaces">
+	    <ACTION>ip netns list</ACTION>
+	  </COMMAND>
+
+
+	  <COMMAND name="show ip tunnel"
+			       help="Show IP tunnels">
+	    <ACTION>ip tunnel show</ACTION>
+	  </COMMAND>
+
+
+	  <COMMAND name="show ip interface"
+			       help="Show IPv4 interfaces">
+	    <ACTION>ip -4 address show</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="show ip neighbour"
+			       help="Show IPv4 neighbours">
+	    <PARAM name="prefix"
+			       help="Show neighbours in prefix"
+			       ptype="ip4_prefix"
+			       prefix="prefix"
+			       optional="true"/>
+	    <PARAM name="interface"
+			       help="Show neighbours on interface"
+			       ptype="string"
+			       prefix="interface"
+			       optional="true"/>
+	    <PARAM name="state"
+			       help="Show neighbours in state"
+			       ptype="rt_nud"
+			       prefix="state"
+			       optional="true"/>
+
+	    <ACTION>
+		    selector=""
+		    if [ -n "${prefix}" ]; then
+		      selector="$selector to ${prefix}"
+		    fi
+		    if [ -n "${interface}" ]; then
+		      selector="$selector dev ${interface}"
+		    fi
+		    if [ -n "${state}" ]; then
+		      selector="$selector nud ${state}"
+		    fi
+		    ip -4 neigh show ${selector}
+	    </ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="show ip route"
+			       help="Show IPv4 unicast routes">
+	    <PARAM name="table"
+			       help="Show routes in table"
+			       ptype="rt_table"
+			       prefix="table"
+			       optional="true"/>
+	    <PARAM name="protocol"
+			       help="Show routes matching protocol"
+			       ptype="rt_protocol"
+			       prefix="protocol"
+			       optional="true"/>
+	    <PARAM name="scope"
+			       help="Show routes matching scope"
+			       ptype="rt_scope"
+			       prefix="scope"
+			       optional="true"/>
+	    <PARAM name="match"
+			       help="Show routes matching prefix"
+			       ptype="ip4_prefix"
+			       prefix="match"
+			       optional="true"/>
+	    <PARAM name="exact"
+			       help="Show routes matching prefix"
+			       ptype="ip4_prefix"
+			       prefix="exact"
+			       optional="true"/>
+	    <PARAM name="root"
+			       help="Show routes matching prefix"
+			       ptype="ip4_prefix"
+			       prefix="root"
+			       optional="true"/>
+
+	    <ACTION>
+		    selector=""
+		    if [ -n "${match}" ]; then
+		      selector="$selector match ${match}"
+		    fi
+		    if [ -n "${exact}" ]; then
+		      selector="$selector exact ${exact}"
+		    fi
+		    if [ -n "${protocol}" ]; then
+		      selector="$selector protocol ${protocol}"
+		    fi
+		    if [ -n "${scope}" ]; then
+		      selector="$selector scope ${scope}"
+		    fi
+		    if [ -n "${table}" ]; then
+		      selector="$selector table ${table}"
+		    fi
+		    ip -4 route show $selector
+	    </ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="show ip route to"
+			       help="Query IPv4 routing system">
+	    <PARAM name="address"
+			       help="Find route to address"
+			       ptype="ip4_address"/>
+	    <PARAM name="from"
+			       help="Select route by source"
+			       ptype="ip4_prefix"
+			       prefix="from"
+			       optional="true"/>
+	    <PARAM name="tos"
+			       help="Select route by ToS"
+			       ptype="rt_tos"
+			       prefix="tos"
+			       optional="true"/>
+	    <PARAM name="mark"
+			       help="Select route by mark"
+			       ptype="string"
+			       prefix="mark"
+			       optional="true"/>
+	    <PARAM name="iif"
+			       help="Select route by input iface"
+			       ptype="string"
+			       prefix="iif"
+			       optional="true"/>
+	    <PARAM name="oif"
+			       help="Select route by output iface"
+			       ptype="string"
+			       prefix="oif"
+			       optional="true"/>
+
+	    <ACTION>
+		    selector=""
+		    if [ -n "${from}" ]; then
+		      selector="$selector from ${from}"
+		    fi
+		    if [ -n "${tos}" ]; then
+		      selector="$selector tos ${tos}"
+		    fi
+		    if [ -n "${mark}" ]; then
+		      selector="$selector mark ${mark}"
+		    fi
+		    if [ -n "${iif}" ]; then
+		      selector="$selector iif ${iif}"
+		    fi
+		    if [ -n "${oif}" ]; then
+		      selector="$selector oif ${oif}"
+		    fi
+		    ip -4 route get ${address} $selector
+	    </ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="show ip rule"
+			       help="Show IPv4 unicast rules">
+	    <ACTION>ip -4 rule show</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="show ip multicast membership"
+			       help="Show IPv4 multicast memberships">
+	    <ACTION>ip -4 maddr show</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="show ip multicast route"
+			       help="Show IPv4 multicast routes">
+	    <ACTION>ip -4 mroute show</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="show ip multicast rule"
+			       help="Show IPv4 multicast rules">
+	    <ACTION>ip -4 mrule show</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="show ip tcp metrics"
+			       help="Show IPv4 TCP metrics">
+	    <ACTION>ip -4 tcp_metrics show</ACTION>
+	  </COMMAND>
+
+
+	  <COMMAND name="monitor ip"
+			       help="Monitor IPv4 events"
+			       interrupt="true">
+	    <ACTION>ip -f inet monitor all</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="monitor ip interface"
+			       help="Monitor IPv4 interfaces"
+			       interrupt="true">
+	    <ACTION>ip -f inet monitor link address</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="monitor ip neighbour"
+			       help="Monitor IPv4 neighbours"
+			       interrupt="true">
+	    <ACTION>ip -f inet monitor neigh</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="monitor ip route"
+			       help="Monitor IPv4 routes"
+			       interrupt="true">
+	    <ACTION>ip -f inet monitor route mroute</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="monitor ip route multicast"
+			       help="Monitor IPv4 multicast routes"
+			       interrupt="true">
+	    <ACTION>ip -f inet monitor mroute</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="monitor ip route unicast"
+			       help="Monitor IPv4 unicast routes"
+			       interrupt="true">
+	    <ACTION>ip -f inet monitor route</ACTION>
+	  </COMMAND>
+
+
+	  <COMMAND name="monitor ip6"
+			       help="Monitor IPv6 events"
+			       interrupt="true">
+	    <ACTION>ip -f inet6 monitor all</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="monitor ip6 interface"
+			       help="Monitor IPv6 interfaces"
+			       interrupt="true">
+	    <ACTION>ip -f inet6 monitor link address</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="monitor ip6 neighbour"
+			       help="Monitor IPv6 neighbours"
+			       interrupt="true">
+	    <ACTION>ip -f inet6 monitor neigh</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="monitor ip6 route"
+			       help="Monitor IPv6 routes"
+			       interrupt="true">
+	    <ACTION>ip -f inet6 monitor route mroute</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="monitor ip6 route multicast"
+			       help="Monitor IPv6 multicast routes"
+			       interrupt="true">
+	    <ACTION>ip -f inet6 monitor mroute</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="monitor ip6 route unicast"
+			       help="Monitor IPv6 unicast routes"
+			       interrupt="true">
+	    <ACTION>ip -f inet6 monitor route</ACTION>
+	  </COMMAND>
+
+  </VIEW>
+
+</CLISH_MODULE>

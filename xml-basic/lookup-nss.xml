@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+	<PTYPE name="nss_database"
+		     method="select"
+         pattern="ahosts ahostsv4 ahostsv6 aliases ethers group gshadow hosts initgroups netgroup networks passwd protocols rpc services shadow"
+         help="NSS database"/>
+
+  <VIEW name="main">
+
+	  <COMMAND name="lookup nss"
+			       help="Perform NSS lookup"
+			       interrupt="true">
+	    <PARAM name="database"
+			       help="Database to query"
+			       ptype="nss_database"/>
+	    <PARAM name="key"
+			       help="Key to query for"
+			       ptype="string"
+			       optional="true"/>
+	    <ACTION>
+		    getent ${database} ${key}
+		    case $? in
+		    1) echo "Bad query" ;;
+		    2) echo "Not found" ;;
+		    3) echo "Enumeration not supported" ;;
+		    esac
+	    </ACTION>
+	  </COMMAND>
+
+  </VIEW>
+
+</CLISH_MODULE>

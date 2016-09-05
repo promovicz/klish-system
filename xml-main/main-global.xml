@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <COMMAND name="help"
+           help="Display the help overview">
+    <ACTION builtin="clish_overview"/>
+  </COMMAND>
+
+  <COMMAND name="quit"
+           help="Quit this shell">
+    <ACTION builtin="clish_nested_up"/>
+  </COMMAND>
+
+  <COMMAND name="quit session"
+           help="Quit the shell entirely">
+    <ACTION builtin="clish_close"/>
+  </COMMAND>
+
+  <COMMAND name="escape"
+           help="Return to the main shell"
+           view="main"
+           viewid="">
+  </COMMAND>
+
+  <COMMAND name="history"
+           help="Display command history">
+    <PARAM name="limit"
+           help="Number of entries to show (zero means all)"
+           optional="true"
+           ptype="unsigned"
+           default="25"/>
+    <ACTION builtin="clish_history">${limit}</ACTION>
+  </COMMAND>
+
+</CLISH_MODULE>

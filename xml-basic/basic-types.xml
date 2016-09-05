@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <PTYPE name="boolean"
+         method="select"
+         pattern="true(1) false(0)"
+         help="Boolean"/>
+
+  <PTYPE name="integer"
+         pattern="[+-]?[0-9]+"
+         help="Signed integer"/>
+  <PTYPE name="unsigned"
+         pattern="[0-9]+"
+         help="Unsigned integer"/>
+
+  <PTYPE name="line"
+         pattern="[[:print:]]*"
+         help="Line"/>
+  <PTYPE name="string"
+         pattern="[[:graph:]]*"
+         help="String"/>
+  <PTYPE name="subcommand"
+		     pattern="[^\]+"
+		     help="Subcommand"/>
+
+  <PTYPE name="file"
+         pattern="[[:graph:]]*"
+         help="File"/>
+
+  <PTYPE name="directory"
+         pattern="[[:graph:]]*"
+         help="Directory"/>
+
+</CLISH_MODULE>

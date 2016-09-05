@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+	<VIEW name="main">
+
+		<COMMAND name="show bridge filter"
+				     help="Show bridge filter tables">
+			<PARAM name="chain"
+				     help="Chain to show"
+				     ptype="string"
+				     prefix="chain"
+				     optional="true"/>
+			<PARAM name="rules"
+				     help="Dump rules"
+				     ptype="string"
+				     value="rules"
+				     optional="true"/>
+			<ACTION>
+				ebtables -L ${chain}
+			</ACTION>
+		</COMMAND>
+
+	</VIEW>
+
+</CLISH_MODULE>

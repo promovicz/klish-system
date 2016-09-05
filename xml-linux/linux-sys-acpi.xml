@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <VIEW name="main">
+
+	  <COMMAND name="show system acpi"
+			       help="Show ACPI information"/>
+
+	  <COMMAND name="show system acpi power"
+			       help="Show ACPI power information">
+	    <ACTION>acpi -iba</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="show system acpi thermal"
+			       help="Show ACPI thermal information">
+	    <ACTION>acpi -itc</ACTION>
+	  </COMMAND>
+
+  </VIEW>
+
+</CLISH_MODULE>

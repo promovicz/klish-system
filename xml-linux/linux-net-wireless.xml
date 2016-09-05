@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <VIEW name="main">
+
+	  <COMMAND name="show wlan"
+			       help="Show wlan information"/>
+
+	  <COMMAND name="show wlan interface"
+			       help="Show wlan interfaces">
+	    <PARAM name="name"
+			       help="Name of interface"
+			       ptype="net_interface"
+			       optional="true"/>
+	    <ACTION>
+		    options=""
+		    if [ -n "${name}" ]; then
+		      options="$options ${name}"
+		    fi
+		    iwconfig $options
+	    </ACTION>
+	  </COMMAND>
+
+  </VIEW>
+
+</CLISH_MODULE>

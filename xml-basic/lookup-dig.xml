@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <VIEW name="main">
+
+	  <COMMAND name="lookup dns"
+			       help="Perform DNS lookup">
+	    <PARAM name="name"
+			       help="Name to query for"
+			       ptype="string"/>
+	    <PARAM name="type"
+			       help="Type to query for"
+			       ptype="string"
+			       prefix="type"
+			       optional="true"
+			       default="ANY"/>
+	    <PARAM name="server"
+			       help="Server to query"
+			       ptype="string"
+			       prefix="server"
+			       optional="true"/>
+	    <PARAM name="port"
+			       help="Port of server"
+			       ptype="string"
+			       prefix="port"
+			       optional="true"/>
+	    <PARAM name="timeout"
+			       help="Timeout for query"
+			       ptype="unsigned"
+			       prefix="timeout"
+			       optional="true"/>
+	    <PARAM name="retries"
+			       help="Retries for query"
+			       ptype="unsigned"
+			       prefix="retries"
+			       optional="true"/>
+	    <PARAM name="dnssec"
+			       help="Request DNSSEC records"
+			       ptype="string"
+			       value="dnssec"
+			       optional="true"/>
+	    <PARAM name="tcp"
+			       help="Always use TCP"
+			       ptype="string"
+			       value="tcp"
+			       optional="true"/>
+	    <ACTION>
+		    options=""
+		    if [ -n "${port}" ]; then
+		      options="$options -p ${port}"
+		    fi
+		    if [ -n "${server}" ]; then
+		      options="@${server} $options"
+		    fi
+		    query="+nocmd"
+		    if [ -n "${timeout}" ]; then
+		      query="$query +time=${timeout}"
+		    fi
+		    if [ -n "${retries}" ]; then
+		      query="$query +tries=${retries}"
+		    fi
+		    if [ -n "${dnssec}" ]; then
+		      query="$query +dnssec"
+		    fi
+		    if [ -n "${tcp}" ]; then
+		      query="$query +tcp"
+		    fi
+		    dig $options -t "${type}" -q "${name}" $query
+		  </ACTION>
+	  </COMMAND>
+
+  </VIEW>
+
+</CLISH_MODULE>

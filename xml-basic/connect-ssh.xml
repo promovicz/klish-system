@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <VIEW name="main">
+
+	  <COMMAND name="connect ssh"
+			       help="Connect to an SSH server">
+      <PARAM name="host"
+             ptype="net_hostname"
+             help="Host to connect to"/>
+      <PARAM name="port"
+             prefix="port"
+             ptype="ip_port"
+             help="Port to connect to"/>
+      <ACTION>
+        options=""
+        if [ -n "${port}" ]; then
+          options="$options -P ${port}"
+        fi
+        ssh $options "${host}"
+      </ACTION>
+    </COMMAND>
+
+  </VIEW>
+
+</CLISH_MODULE>

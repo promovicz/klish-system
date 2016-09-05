@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <VIEW name="main">
+
+    <COMMAND name="show network queue"
+             help="Show network queues">
+      <ACTION>tc qdisc show</ACTION>
+    </COMMAND>
+
+    <COMMAND name="show network queue class"
+             help="Show network queue classes">
+      <ACTION>tc class show</ACTION>
+    </COMMAND>
+
+    <COMMAND name="show network queue filter"
+             help="Show network queue filters">
+      <ACTION>tc filter show</ACTION>
+    </COMMAND>
+
+  </VIEW>
+
+</CLISH_MODULE>

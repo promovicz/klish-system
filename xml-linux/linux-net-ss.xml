@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <VIEW name="main">
+
+	  <COMMAND name="show network connection"
+			       help="Show network connections">
+	    <ACTION>ss -A inet</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="show network listener"
+			       help="Show network listeners">
+	    <ACTION>ss -A inet -l</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="show network socket"
+			       help="Show network sockets">
+	    <ACTION>ss -A inet -A raw -A packet -a</ACTION>
+	  </COMMAND>
+
+
+	  <COMMAND name="show ip connection"
+			 help="Show IPv4 connections">
+	    <ACTION>ss -A inet -4</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="show ip listener"
+			       help="Show IPv4 listeners">
+	    <ACTION>ss -A inet -l4</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="show ip socket"
+			       help="Show IPv4 sockets">
+	    <ACTION>ss -A inet -A raw -a4</ACTION>
+	  </COMMAND>
+
+
+	  <COMMAND name="show ip tcp connection"
+			       help="Show IPv4 TCP connections">
+	    <ACTION>ss -A inet -t4</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="show ip tcp listener"
+			       help="Show IPv4 TCP listeners">
+	    <ACTION>ss -A inet -tl4</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="show ip tcp socket"
+			       help="Show IPv4 TCP sockets">
+	    <ACTION>ss -A inet -ta4</ACTION>
+	  </COMMAND>
+
+    <COMMAND name="show ip udp socket"
+			       help="Show IPv4 UDP sockets">
+	    <ACTION>ss -A inet -ua4</ACTION>
+	  </COMMAND>
+
+
+	  <COMMAND name="show ip6 connection"
+			       help="Show IPv6 connections">
+	    <ACTION>ss -A inet -6</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="show ip6 listener"
+			       help="Show IPv6 listeners">
+	    <ACTION>ss -A inet -l6</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="show ip6 socket"
+			       help="Show IPv6 sockets">
+	    <ACTION>ss -A inet -A raw -a6</ACTION>
+	  </COMMAND>
+
+
+	  <COMMAND name="show ip6 tcp connection"
+			       help="Show IPv6 TCP connections">
+	    <ACTION>ss -A inet -t6</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="show ip6 tcp listener"
+			       help="Show IPv6 TCP listeners">
+	    <ACTION>ss -A inet -tl6</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="show ip6 tcp socket"
+			       help="Show IPv6 TCP sockets">
+	    <ACTION>ss -A inet -ta6</ACTION>
+	  </COMMAND>
+
+    <COMMAND name="show ip6 udp socket"
+			       help="Show IPv4 UDP sockets">
+	    <ACTION>ss -A inet -ua6</ACTION>
+	  </COMMAND>
+
+  </VIEW>
+
+</CLISH_MODULE>
