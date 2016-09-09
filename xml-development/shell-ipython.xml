@@ -7,7 +7,7 @@
   <VIEW name="main">
 
     <COMMAND name="interact ipython"
-			       help="Start ipython as a subprocess"
+			       help="Start ipython shell"
              interrupt="true">
       <ACTION>ipython</ACTION>
     </COMMAND>
