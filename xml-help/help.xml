@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <VIEW name="main">
+
+    <COMMAND name="help"
+             help="Help information">
+    </COMMAND>
+
+    <COMMAND name="help shell"
+             help="Help about using the shell">
+      <ACTION builtin="clish_overview"/>
+    </COMMAND>
+
+    <COMMAND name="help commands"
+			       help="Help about available commands">
+      <ACTION builtin="python@python">
+import sysklish.help
+sysklish.help.help_commands(clish.params)
+      </ACTION>
+    </COMMAND>
+
+  </VIEW>
+
+</CLISH_MODULE>

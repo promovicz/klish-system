@@ -4,11 +4,6 @@
  xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
                      http://clish.sourceforge.net/XMLSchema/clish.xsd">
 
-  <COMMAND name="help"
-           help="Display the help overview">
-    <ACTION builtin="clish_overview"/>
-  </COMMAND>
-
   <COMMAND name="quit"
            help="Quit this shell">
     <ACTION builtin="clish_nested_up"/>
