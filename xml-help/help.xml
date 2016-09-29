@@ -16,7 +16,7 @@
     </COMMAND>
 
     <COMMAND name="help commands"
-			       help="Help about available commands">
+             help="Help about available commands">
       <ACTION builtin="python@python">
 import sysklish.help
 sysklish.help.help_commands(clish.params)
