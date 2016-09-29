@@ -5,8 +5,8 @@
                      http://clish.sourceforge.net/XMLSchema/clish.xsd">
 
   <!-- Load python so that other modules can use it -->
-	<PLUGIN name="python" file="clish_plugin_python.so">
+  <PLUGIN name="python" file="clish_plugin_python.so">
 print("Python loaded.")
-	</PLUGIN>
+  </PLUGIN>
 
 </CLISH_MODULE>

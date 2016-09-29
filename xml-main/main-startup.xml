@@ -15,7 +15,7 @@
     <ACTION>
 echo "Welcome on $(hostname), logged in as $(whoami)."
 echo ""
-	  </ACTION>
+    </ACTION>
   </STARTUP>
 
 </CLISH_MODULE>
