@@ -16,6 +16,9 @@
 	    <ACTION>lscpu</ACTION>
 	  </COMMAND>
 
+	  <COMMAND name="show system cpu architecture"
+			       help="Show system CPU architecture">
+	    <ACTION>uname -m</ACTION>
 	  </COMMAND>
 
 	  <COMMAND name="show system cpu usage"
