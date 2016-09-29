@@ -13,6 +13,7 @@
 			       help="Show VirtualBox host floppy drives">
 	    <ACTION>VBoxManage list hostfloppies</ACTION>
 	  </COMMAND>
+
 	  <COMMAND name="show host optical"
 			       help="Show VirtualBox host optical drives">
 	    <ACTION>VBoxManage list hostdvds</ACTION>

@@ -130,6 +130,7 @@
         VBoxManage modifyvm "${machine}" --cpus "${count}"
       </ACTION>
     </COMMAND>
+
     <COMMAND name="set memory"
 			       help="Set memory size"
              interrupt="true">
@@ -140,6 +141,7 @@
         VBoxManage modifyvm "${machine}" --memory "${size}"
       </ACTION>
     </COMMAND>
+
     <COMMAND name="set vram"
 			       help="Set VRAM size"
              interrupt="true">
@@ -161,6 +163,7 @@
         VBoxManage modifyvm "${machine}" --acpi "${onoff}"
       </ACTION>
     </COMMAND>
+
     <COMMAND name="set ioapic"
 			       help="Enable/disable IO-APIC"
              interrupt="true">
@@ -171,6 +174,7 @@
         VBoxManage modifyvm "${machine}" --ioapic "${onoff}"
       </ACTION>
     </COMMAND>
+
     <COMMAND name="set hpet"
 			       help="Enable/disable HPET"
              interrupt="true">
@@ -181,6 +185,7 @@
         VBoxManage modifyvm "${machine}" --hpet "${onoff}"
       </ACTION>
     </COMMAND>
+
     <COMMAND name="set longmode"
 			       help="Enable/disable long mode"
              interrupt="true">
@@ -191,6 +196,7 @@
         VBoxManage modifyvm "${machine}" --longmode "${onoff}"
       </ACTION>
     </COMMAND>
+
     <COMMAND name="set pae"
 			       help="Enable/disable PAE"
              interrupt="true">
