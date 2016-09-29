@@ -7,13 +7,13 @@
   <VIEW name="main">
 
     <COMMAND name="interact bpython"
-			       help="Start bpython shell"
+             help="Start bpython shell"
              interrupt="true">
       <ACTION>bpython</ACTION>
     </COMMAND>
 
     <COMMAND name="interact bpython internal"
-			       help="Start bpython inside clish"
+             help="Start bpython inside clish"
              interrupt="true">
       <ACTION builtin="python@python">
 import bpython
