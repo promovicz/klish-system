@@ -6,20 +6,20 @@
 
   <VIEW name="virtualbox">
 
-	  <COMMAND name="show"
-			       help="Show VirtualBox information"/>
+    <COMMAND name="show"
+             help="Show VirtualBox information"/>
 
-	  <COMMAND name="configure"
-			       help="Configure a VirtualBox component"/>
+    <COMMAND name="configure"
+             help="Configure a VirtualBox component"/>
 
-	  <COMMAND name="create"
-			       help="Create a VirtualBox component"/>
+    <COMMAND name="create"
+             help="Create a VirtualBox component"/>
 
-	  <COMMAND name="delete"
-			       help="Delete a VirtualBox component"/>
+    <COMMAND name="delete"
+             help="Delete a VirtualBox component"/>
 
     <COMMAND name="request"
-			       help="Request a VirtualBox operation"/>
+             help="Request a VirtualBox operation"/>
 
   </VIEW>
 

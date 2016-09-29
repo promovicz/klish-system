@@ -6,18 +6,18 @@
 
   <VIEW name="virtualbox">
 
-	  <COMMAND name="show host"
-			       help="Show VirtualBox host information"/>
+    <COMMAND name="show host"
+             help="Show VirtualBox host information"/>
 
-	  <COMMAND name="show host floppy"
-			       help="Show VirtualBox host floppy drives">
-	    <ACTION>VBoxManage list hostfloppies</ACTION>
-	  </COMMAND>
+    <COMMAND name="show host floppy"
+             help="Show VirtualBox host floppy drives">
+      <ACTION>VBoxManage list hostfloppies</ACTION>
+    </COMMAND>
 
-	  <COMMAND name="show host optical"
-			       help="Show VirtualBox host optical drives">
-	    <ACTION>VBoxManage list hostdvds</ACTION>
-	  </COMMAND>
+    <COMMAND name="show host optical"
+             help="Show VirtualBox host optical drives">
+      <ACTION>VBoxManage list hostdvds</ACTION>
+    </COMMAND>
 
   </VIEW>
 

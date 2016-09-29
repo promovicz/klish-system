@@ -6,8 +6,8 @@
 
   <VIEW name="virtualbox">
 
-	  <COMMAND name="show machine"
-			       help="Show VirtualBox machines">
+    <COMMAND name="show machine"
+             help="Show VirtualBox machines">
       <PARAM name="machine"
              help="Machine to show"
              ptype="virtualbox_machine"
@@ -22,8 +22,8 @@
       </ACTION>
     </COMMAND>
 
-	  <COMMAND name="create machine"
-			       help="Create VirtualBox machine">
+    <COMMAND name="create machine"
+             help="Create VirtualBox machine">
       <ACTION>
         VBoxManage list vms
       </ACTION>
@@ -39,10 +39,10 @@
     </COMMAND>
 
     <COMMAND name="request machine"
-			       help="Request a VirtualBox machine operation"/>
+             help="Request a VirtualBox machine operation"/>
 
     <COMMAND name="request machine start"
-			       help="Start a VirtualBox machine"
+             help="Start a VirtualBox machine"
              interrupt="true">
       <PARAM name="interface"
              help="Interface to use"
@@ -56,7 +56,7 @@
     </COMMAND>
 
     <COMMAND name="request machine pause"
-			       help="Pause a VirtualBox machine"
+             help="Pause a VirtualBox machine"
              interrupt="true">
       <PARAM name="machine"
              help="Machine to pause"
@@ -67,7 +67,7 @@
     </COMMAND>
 
     <COMMAND name="request machine resume"
-			       help="Resume a VirtualBox machine"
+             help="Resume a VirtualBox machine"
              interrupt="true">
       <PARAM name="machine"
              help="Machine to resume"
@@ -78,7 +78,7 @@
     </COMMAND>
 
     <COMMAND name="request machine reset"
-			       help="Reset a VirtualBox machine"
+             help="Reset a VirtualBox machine"
              interrupt="true">
       <PARAM name="machine"
              help="Machine to reset"
@@ -89,7 +89,7 @@
     </COMMAND>
 
     <COMMAND name="request machine poweroff"
-			       help="Power off a VirtualBox machine"
+             help="Power off a VirtualBox machine"
              interrupt="true">
       <PARAM name="machine"
              help="Machine to power off"
@@ -106,11 +106,11 @@
         prompt="vbox-${machine}&gt;">
 
     <COMMAND name="set"
-			       help="Set a property"
+             help="Set a property"
              interrupt="true"/>
 
     <COMMAND name="set description"
-			       help="Enable/disable ACPI"
+             help="Enable/disable ACPI"
              interrupt="true">
       <PARAM name="description"
              help="Set description"
@@ -121,7 +121,7 @@
     </COMMAND>
 
     <COMMAND name="set cpus"
-			       help="Set CPU count"
+             help="Set CPU count"
              interrupt="true">
       <PARAM name="count"
              help="CPU count"
@@ -132,7 +132,7 @@
     </COMMAND>
 
     <COMMAND name="set memory"
-			       help="Set memory size"
+             help="Set memory size"
              interrupt="true">
       <PARAM name="size"
              help="Memory size in MBytes"
@@ -143,7 +143,7 @@
     </COMMAND>
 
     <COMMAND name="set vram"
-			       help="Set VRAM size"
+             help="Set VRAM size"
              interrupt="true">
       <PARAM name="size"
              help="VRAM size in MBytes"
@@ -154,7 +154,7 @@
     </COMMAND>
 
     <COMMAND name="set acpi"
-			       help="Enable/disable ACPI"
+             help="Enable/disable ACPI"
              interrupt="true">
       <PARAM name="onoff"
              help="On or off"
@@ -165,7 +165,7 @@
     </COMMAND>
 
     <COMMAND name="set ioapic"
-			       help="Enable/disable IO-APIC"
+             help="Enable/disable IO-APIC"
              interrupt="true">
       <PARAM name="onoff"
              help="On or off"
@@ -176,7 +176,7 @@
     </COMMAND>
 
     <COMMAND name="set hpet"
-			       help="Enable/disable HPET"
+             help="Enable/disable HPET"
              interrupt="true">
       <PARAM name="onoff"
              help="On or off"
@@ -187,7 +187,7 @@
     </COMMAND>
 
     <COMMAND name="set longmode"
-			       help="Enable/disable long mode"
+             help="Enable/disable long mode"
              interrupt="true">
       <PARAM name="onoff"
              help="On or off"
@@ -198,7 +198,7 @@
     </COMMAND>
 
     <COMMAND name="set pae"
-			       help="Enable/disable PAE"
+             help="Enable/disable PAE"
              interrupt="true">
       <PARAM name="onoff"
              help="On or off"

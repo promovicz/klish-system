@@ -6,32 +6,32 @@
 
   <VIEW name="virtualbox">
 
-	  <COMMAND name="show network"
-			       help="Show VirtualBox networks">
+    <COMMAND name="show network"
+             help="Show VirtualBox networks">
     </COMMAND>
 
-	  <COMMAND name="show network dhcp"
-			       help="Show VirtualBox DHCP servers">
+    <COMMAND name="show network dhcp"
+             help="Show VirtualBox DHCP servers">
       <ACTION>VBoxManage list dhcpservers</ACTION>
     </COMMAND>
 
-	  <COMMAND name="show network bridge"
-			       help="Show VirtualBox bridge networks">
+    <COMMAND name="show network bridge"
+             help="Show VirtualBox bridge networks">
       <ACTION>VBoxManage list bridgedifs</ACTION>
     </COMMAND>
 
     <COMMAND name="show network host"
-			       help="Show VirtualBox host networks">
+             help="Show VirtualBox host networks">
       <ACTION>VBoxManage list hostonlyifs</ACTION>
     </COMMAND>
 
     <COMMAND name="show network internal"
-			       help="Show VirtualBox internal networks">
+             help="Show VirtualBox internal networks">
       <ACTION>VBoxManage list intnets</ACTION>
     </COMMAND>
 
     <COMMAND name="show network nat"
-			       help="Show VirtualBox NAT networks">
+             help="Show VirtualBox NAT networks">
       <ACTION>VBoxManage list natnets</ACTION>
     </COMMAND>
 
