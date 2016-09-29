@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <VIEW name="main">
+
+	  <COMMAND name="show debconf"
+			       help="Show debconf information"/>
+
+	  <COMMAND name="show debconf databases"
+			       help="Show debconf databases on the system">
+	    <ACTION>debconf-show --listdbs</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="show debconf packages"
+			       help="Show debconf packages on the system">
+	    <ACTION>debconf-show --listowners</ACTION>
+	  </COMMAND>
+
+  </VIEW>
+
+</CLISH_MODULE>
