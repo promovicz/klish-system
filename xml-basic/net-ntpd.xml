@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                                  http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <VIEW name="main">
+
+    <COMMAND name="show ntp"
+             help="Show NTP information"/>
+
+    <COMMAND name="show ntp association"
+             help="Show NTP associations">
+      <ACTION>ntpq -n -c associations</ACTION>
+    </COMMAND>
+
+    <COMMAND name="show ntp host"
+             help="Show NTP host">
+      <ACTION>ntpq -n -c peers</ACTION>
+    </COMMAND>
+
+    <COMMAND name="show ntp peer"
+             help="Show NTP peers">
+      <ACTION>ntpq -n -c peers</ACTION>
+    </COMMAND>
+
+    <COMMAND name="show ntp protocol"
+             help="Show NTP protocol">
+      <ACTION>ntpq -n -c ntpversion</ACTION>
+    </COMMAND>
+
+    <COMMAND name="show ntp timeout"
+             help="Show NTP timeout">
+      <ACTION>ntpq -n -c timeout</ACTION>
+    </COMMAND>
+
+    <COMMAND name="show ntp variable"
+             help="Show NTP variables">
+      <ACTION>ntpq -n -c showvars</ACTION>
+    </COMMAND>
+
+    <COMMAND name="show ntp version"
+             help="Show NTP version">
+      <ACTION>ntpq -n -c version</ACTION>
+    </COMMAND>
+
+  </VIEW>
+
+</CLISH_MODULE>
