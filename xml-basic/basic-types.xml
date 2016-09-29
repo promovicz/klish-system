@@ -9,6 +9,11 @@
          pattern="true(1) false(0)"
          help="Boolean"/>
 
+  <PTYPE name="onoff"
+         method="select"
+         pattern="on off"
+         help="On-Off"/>
+
   <PTYPE name="integer"
          pattern="[+-]?[0-9]+"
          help="Signed integer"/>
