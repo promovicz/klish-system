@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <VIEW name="virtualbox">
+
+	  <COMMAND name="show network"
+			       help="Show VirtualBox networks">
+    </COMMAND>
+
+	  <COMMAND name="show network dhcp"
+			       help="Show VirtualBox DHCP servers">
+      <ACTION>VBoxManage list dhcpservers</ACTION>
+    </COMMAND>
+
+	  <COMMAND name="show network bridge"
+			       help="Show VirtualBox bridge networks">
+      <ACTION>VBoxManage list bridgedifs</ACTION>
+    </COMMAND>
+
+    <COMMAND name="show network host"
+			       help="Show VirtualBox host networks">
+      <ACTION>VBoxManage list hostonlyifs</ACTION>
+    </COMMAND>
+
+    <COMMAND name="show network internal"
+			       help="Show VirtualBox internal networks">
+      <ACTION>VBoxManage list intnets</ACTION>
+    </COMMAND>
+
+    <COMMAND name="show network nat"
+			       help="Show VirtualBox NAT networks">
+      <ACTION>VBoxManage list natnets</ACTION>
+    </COMMAND>
+
+  </VIEW>
+
+</CLISH_MODULE>

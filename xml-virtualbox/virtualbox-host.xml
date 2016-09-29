@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <VIEW name="virtualbox">
+
+	  <COMMAND name="show host"
+			       help="Show VirtualBox host information"/>
+
+	  <COMMAND name="show host floppy"
+			       help="Show VirtualBox host floppy drives">
+	    <ACTION>VBoxManage list hostfloppies</ACTION>
+	  </COMMAND>
+	  <COMMAND name="show host optical"
+			       help="Show VirtualBox host optical drives">
+	    <ACTION>VBoxManage list hostdvds</ACTION>
+	  </COMMAND>
+
+  </VIEW>
+
+</CLISH_MODULE>

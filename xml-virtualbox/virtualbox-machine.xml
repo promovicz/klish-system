@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <VIEW name="virtualbox">
+
+	  <COMMAND name="show machine"
+			       help="Show VirtualBox machines">
+      <PARAM name="machine"
+             help="Machine to show"
+             ptype="virtualbox_machine"
+             optional="true"/>
+      <ACTION>
+        machine="${machine}"
+        if [ -n "$machine" ]; then
+          VBoxManage showvminfo "$machine"
+        else
+          VBoxManage list vms
+        fi
+      </ACTION>
+    </COMMAND>
+
+	  <COMMAND name="create machine"
+			       help="Create VirtualBox machine">
+      <ACTION>
+        VBoxManage list vms
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="configure machine"
+             help="Configure a VirtualBox machine"
+             view="virtualbox-configure-machine"
+             viewid="machine=${machine}">
+      <PARAM name="machine"
+             help="Machine to configure"
+             ptype="virtualbox_machine"/>
+    </COMMAND>
+
+    <COMMAND name="request machine"
+			       help="Request a VirtualBox machine operation"/>
+
+    <COMMAND name="request machine start"
+			       help="Start a VirtualBox machine"
+             interrupt="true">
+      <PARAM name="interface"
+             help="Interface to use"
+             ptype="virtualbox_interface"/>
+      <PARAM name="machine"
+             help="Machine to start"
+             ptype="virtualbox_machine"/>
+      <ACTION>
+        VBoxManage startvm "${machine}" --type "${interface}"
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="request machine pause"
+			       help="Pause a VirtualBox machine"
+             interrupt="true">
+      <PARAM name="machine"
+             help="Machine to pause"
+             ptype="virtualbox_machine"/>
+      <ACTION>
+        VBoxManage controlvm "${machine}" pause
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="request machine resume"
+			       help="Resume a VirtualBox machine"
+             interrupt="true">
+      <PARAM name="machine"
+             help="Machine to resume"
+             ptype="virtualbox_machine"/>
+      <ACTION>
+        VBoxManage controlvm "${machine}" pause
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="request machine reset"
+			       help="Reset a VirtualBox machine"
+             interrupt="true">
+      <PARAM name="machine"
+             help="Machine to reset"
+             ptype="virtualbox_machine"/>
+      <ACTION>
+        VBoxManage controlvm "${machine}" reset
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="request machine poweroff"
+			       help="Power off a VirtualBox machine"
+             interrupt="true">
+      <PARAM name="machine"
+             help="Machine to power off"
+             ptype="virtualbox_machine"/>
+      <ACTION>
+        VBoxManage controlvm "${machine}" poweroff
+      </ACTION>
+    </COMMAND>
+
+  </VIEW>
+
+  <VIEW name="virtualbox-configure-machine"
+        depth="2"
+        prompt="vbox-${machine}&gt;">
+
+    <COMMAND name="set"
+			       help="Set a property"
+             interrupt="true"/>
+
+    <COMMAND name="set description"
+			       help="Enable/disable ACPI"
+             interrupt="true">
+      <PARAM name="description"
+             help="Set description"
+             ptype="line"/>
+      <ACTION>
+        VBoxManage modifyvm "${machine}" --description "${description}"
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="set cpus"
+			       help="Set CPU count"
+             interrupt="true">
+      <PARAM name="count"
+             help="CPU count"
+             ptype="integer"/>
+      <ACTION>
+        VBoxManage modifyvm "${machine}" --cpus "${count}"
+      </ACTION>
+    </COMMAND>
+    <COMMAND name="set memory"
+			       help="Set memory size"
+             interrupt="true">
+      <PARAM name="size"
+             help="Memory size in MBytes"
+             ptype="integer"/>
+      <ACTION>
+        VBoxManage modifyvm "${machine}" --memory "${size}"
+      </ACTION>
+    </COMMAND>
+    <COMMAND name="set vram"
+			       help="Set VRAM size"
+             interrupt="true">
+      <PARAM name="size"
+             help="VRAM size in MBytes"
+             ptype="integer"/>
+      <ACTION>
+        VBoxManage modifyvm "${machine}" --vram "${size}"
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="set acpi"
+			       help="Enable/disable ACPI"
+             interrupt="true">
+      <PARAM name="onoff"
+             help="On or off"
+             ptype="onoff"/>
+      <ACTION>
+        VBoxManage modifyvm "${machine}" --acpi "${onoff}"
+      </ACTION>
+    </COMMAND>
+    <COMMAND name="set ioapic"
+			       help="Enable/disable IO-APIC"
+             interrupt="true">
+      <PARAM name="onoff"
+             help="On or off"
+             ptype="onoff"/>
+      <ACTION>
+        VBoxManage modifyvm "${machine}" --ioapic "${onoff}"
+      </ACTION>
+    </COMMAND>
+    <COMMAND name="set hpet"
+			       help="Enable/disable HPET"
+             interrupt="true">
+      <PARAM name="onoff"
+             help="On or off"
+             ptype="onoff"/>
+      <ACTION>
+        VBoxManage modifyvm "${machine}" --hpet "${onoff}"
+      </ACTION>
+    </COMMAND>
+    <COMMAND name="set longmode"
+			       help="Enable/disable long mode"
+             interrupt="true">
+      <PARAM name="onoff"
+             help="On or off"
+             ptype="onoff"/>
+      <ACTION>
+        VBoxManage modifyvm "${machine}" --longmode "${onoff}"
+      </ACTION>
+    </COMMAND>
+    <COMMAND name="set pae"
+			       help="Enable/disable PAE"
+             interrupt="true">
+      <PARAM name="onoff"
+             help="On or off"
+             ptype="onoff"/>
+      <ACTION>
+        VBoxManage modifyvm "${machine}" --pae "${onoff}"
+      </ACTION>
+    </COMMAND>
+
+  </VIEW>
+
+</CLISH_MODULE>

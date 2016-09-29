@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <PTYPE name="virtualbox_interface"
+         method="select"
+         pattern="gui sdl headless"
+         help="Interface"/>
+
+  <PTYPE name="virtualbox_machine"
+         pattern="[[:graph:]]*"
+         help="Machine"/>
+
+  <PTYPE name="virtualbox_network"
+         pattern="[[:graph:]]*"
+         help="Network"/>
+
+</CLISH_MODULE>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <VIEW name="virtualbox">
+
+	  <COMMAND name="create storage"
+			       help="Create VirtualBox storage object"/>
+
+	  <COMMAND name="show storage"
+			       help="Show VirtualBox storage"/>
+
+
+    <COMMAND name="create storage disk"
+			       help="Create VirtualBox disk">
+    </COMMAND>
+
+	  <COMMAND name="show storage disk"
+			       help="Show virtual hard disk images">
+      <ACTION>VBoxManage list hdds</ACTION>
+    </COMMAND>
+
+    <COMMAND name="create storage floppy"
+			       help="Create VirtualBox floppy">
+    </COMMAND>
+
+	  <COMMAND name="show storage floppy"
+			       help="Show virtual floppy drive images">
+	    <ACTION>VBoxManage list floppies</ACTION>
+	  </COMMAND>
+
+    <COMMAND name="create storage optical"
+			       help="Create VirtualBox optical">
+    </COMMAND>
+
+	  <COMMAND name="show storage optical"
+			       help="Show virtual optical drive images">
+	    <ACTION>VBoxManage list dvds</ACTION>
+	  </COMMAND>
+
+  </VIEW>
+
+</CLISH_MODULE>
