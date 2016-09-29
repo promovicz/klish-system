@@ -6,6 +6,9 @@
 
   <VIEW name="main">
 
+    <COMMAND name="edit system"
+			       help="Edit system configuration"/>
+
     <COMMAND name="show system"
 			       help="Show system information"/>
 

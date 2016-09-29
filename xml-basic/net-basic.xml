@@ -6,6 +6,9 @@
 
   <VIEW name="main">
 
+	  <COMMAND name="edit network"
+			       help="Edit network configuration"/>
+
 	  <COMMAND name="show network"
 			       help="Show network information"/>
 

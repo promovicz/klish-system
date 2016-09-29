@@ -6,6 +6,9 @@
 
   <VIEW name="main">
 
+	  <COMMAND name="edit"
+			       help="Edit files and objects"/>
+
 	  <COMMAND name="monitor"
 			       help="Monitor system changes"/>
 
