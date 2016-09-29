@@ -6,49 +6,49 @@
 
   <VIEW name="main">
 
-	  <COMMAND name="show ip tracking"
-			       help="Show IPv4 tracking information"/>
+    <COMMAND name="show ip tracking"
+             help="Show IPv4 tracking information"/>
 
-	  <COMMAND name="show ip tracking flow"
-			       help="Show IPv4 tracking flows">
-	    <ACTION>conntrack -f ipv4 -L conntrack</ACTION>
-	  </COMMAND>
+    <COMMAND name="show ip tracking flow"
+             help="Show IPv4 tracking flows">
+      <ACTION>conntrack -f ipv4 -L conntrack</ACTION>
+    </COMMAND>
 
-	  <COMMAND name="show ip tracking expectation"
-			       help="Show IPv4 tracking expectations">
-	    <ACTION>conntrack -f ipv4 -L expect</ACTION>
-	  </COMMAND>
+    <COMMAND name="show ip tracking expectation"
+             help="Show IPv4 tracking expectations">
+      <ACTION>conntrack -f ipv4 -L expect</ACTION>
+    </COMMAND>
 
-	  <COMMAND name="show ip tracking statistics"
-			       help="Show IPv4 tracking statistics">
-	    <ACTION>
-		    echo "# NOTE: Statistics include all network protocols"
-		    conntrack -S
-	    </ACTION>
-	  </COMMAND>
+    <COMMAND name="show ip tracking statistics"
+             help="Show IPv4 tracking statistics">
+      <ACTION>
+        echo "# NOTE: Statistics include all network protocols"
+        conntrack -S
+      </ACTION>
+    </COMMAND>
 
 
-	  <COMMAND name="show ip6 tracking"
-			       help="Show IPv6 tracking information">
-	  </COMMAND>
+    <COMMAND name="show ip6 tracking"
+             help="Show IPv6 tracking information">
+    </COMMAND>
 
-	  <COMMAND name="show ip6 tracking flow"
-			       help="Show IPv6 tracking flows">
-	    <ACTION>conntrack -f ipv6 -L conntrack</ACTION>
-	  </COMMAND>
+    <COMMAND name="show ip6 tracking flow"
+             help="Show IPv6 tracking flows">
+      <ACTION>conntrack -f ipv6 -L conntrack</ACTION>
+    </COMMAND>
 
-	  <COMMAND name="show ip6 tracking expectation"
-			       help="Show IPv6 tracking expectations">
-	    <ACTION>conntrack -f ipv6 -L expect</ACTION>
-	  </COMMAND>
+    <COMMAND name="show ip6 tracking expectation"
+             help="Show IPv6 tracking expectations">
+      <ACTION>conntrack -f ipv6 -L expect</ACTION>
+    </COMMAND>
 
-	  <COMMAND name="show ip6 tracking statistics"
-			       help="Show IPv6 tracking statistics">
-	    <ACTION>
-		    echo "# NOTE: Statistics include all network protocols"
-		    conntrack -S
-	    </ACTION>
-	  </COMMAND>
+    <COMMAND name="show ip6 tracking statistics"
+             help="Show IPv6 tracking statistics">
+      <ACTION>
+        echo "# NOTE: Statistics include all network protocols"
+        conntrack -S
+      </ACTION>
+    </COMMAND>
 
   </VIEW>
 

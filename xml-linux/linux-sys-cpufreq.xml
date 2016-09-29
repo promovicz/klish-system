@@ -6,21 +6,21 @@
 
   <VIEW name="main">
 
-	  <COMMAND name="show system cpu frequency"
-			       help="Show system CPU frequency information">
-	    <PARAM name="detail"
-			       help="Detailed output"
-			       ptype="string"
-			       value="detail"
-			       optional="true"/>
-	    <ACTION>
-		    options=""
-		    if [ -z "${detail}" ]; then
-		      options="$options -o"
-		    fi
-	  	  cpufreq-info $options
-	    </ACTION>
-	  </COMMAND>
+    <COMMAND name="show system cpu frequency"
+             help="Show system CPU frequency information">
+      <PARAM name="detail"
+             help="Detailed output"
+             ptype="string"
+             value="detail"
+             optional="true"/>
+      <ACTION>
+        options=""
+        if [ -z "${detail}" ]; then
+          options="$options -o"
+        fi
+        cpufreq-info $options
+      </ACTION>
+    </COMMAND>
 
   </VIEW>
 

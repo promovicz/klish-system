@@ -4,25 +4,25 @@
  xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
                      http://clish.sourceforge.net/XMLSchema/clish.xsd">
 
-	<VIEW name="main">
+  <VIEW name="main">
 
-		<COMMAND name="show bridge filter"
-				     help="Show bridge filter tables">
-			<PARAM name="chain"
-				     help="Chain to show"
-				     ptype="string"
-				     prefix="chain"
-				     optional="true"/>
-			<PARAM name="rules"
-				     help="Dump rules"
-				     ptype="string"
-				     value="rules"
-				     optional="true"/>
-			<ACTION>
-				ebtables -L ${chain}
-			</ACTION>
-		</COMMAND>
+    <COMMAND name="show bridge filter"
+             help="Show bridge filter tables">
+      <PARAM name="chain"
+             help="Chain to show"
+             ptype="string"
+             prefix="chain"
+             optional="true"/>
+      <PARAM name="rules"
+             help="Dump rules"
+             ptype="string"
+             value="rules"
+             optional="true"/>
+      <ACTION>
+        ebtables -L ${chain}
+      </ACTION>
+    </COMMAND>
 
-	</VIEW>
+  </VIEW>
 
 </CLISH_MODULE>

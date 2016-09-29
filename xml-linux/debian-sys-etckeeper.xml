@@ -6,26 +6,26 @@
 
   <VIEW name="main">
 
-	  <COMMAND name="request etckeeper"
-			       help="Request etckeeper operation"/>
+    <COMMAND name="request etckeeper"
+             help="Request etckeeper operation"/>
 
     <COMMAND name="request etckeeper commit"
-			       help="Commit etckeeper state"/>
+             help="Commit etckeeper state"/>
 
-	  <COMMAND name="show etckeeper"
-			       help="Show etckeeper information"/>
+    <COMMAND name="show etckeeper"
+             help="Show etckeeper information"/>
 
-	  <COMMAND name="show etckeeper log"
-			       help="Show system configuration log"
+    <COMMAND name="show etckeeper log"
+             help="Show system configuration log"
              interrupt="true">
-	    <ACTION>etckeeper vcs log</ACTION>
-	  </COMMAND>
+      <ACTION>etckeeper vcs log</ACTION>
+    </COMMAND>
 
     <COMMAND name="show etckeeper status"
-			       help="Show system configuration status"
+             help="Show system configuration status"
              interrupt="true">
-	    <ACTION>etckeeper vcs status</ACTION>
-	  </COMMAND>
+      <ACTION>etckeeper vcs status</ACTION>
+    </COMMAND>
 
   </VIEW>
 

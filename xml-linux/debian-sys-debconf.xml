@@ -6,18 +6,18 @@
 
   <VIEW name="main">
 
-	  <COMMAND name="show debconf"
-			       help="Show debconf information"/>
+    <COMMAND name="show debconf"
+             help="Show debconf information"/>
 
-	  <COMMAND name="show debconf databases"
-			       help="Show debconf databases on the system">
-	    <ACTION>debconf-show --listdbs</ACTION>
-	  </COMMAND>
+    <COMMAND name="show debconf databases"
+             help="Show debconf databases on the system">
+      <ACTION>debconf-show --listdbs</ACTION>
+    </COMMAND>
 
-	  <COMMAND name="show debconf packages"
-			       help="Show debconf packages on the system">
-	    <ACTION>debconf-show --listowners</ACTION>
-	  </COMMAND>
+    <COMMAND name="show debconf packages"
+             help="Show debconf packages on the system">
+      <ACTION>debconf-show --listowners</ACTION>
+    </COMMAND>
 
   </VIEW>
 

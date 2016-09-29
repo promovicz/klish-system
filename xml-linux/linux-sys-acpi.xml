@@ -6,18 +6,18 @@
 
   <VIEW name="main">
 
-	  <COMMAND name="show system acpi"
-			       help="Show system ACPI information"/>
+    <COMMAND name="show system acpi"
+             help="Show system ACPI information"/>
 
-	  <COMMAND name="show system acpi power"
-			       help="Show ACPI power information">
-	    <ACTION>acpi -iba</ACTION>
-	  </COMMAND>
+    <COMMAND name="show system acpi power"
+             help="Show ACPI power information">
+      <ACTION>acpi -iba</ACTION>
+    </COMMAND>
 
-	  <COMMAND name="show system acpi thermal"
-			       help="Show ACPI thermal information">
-	    <ACTION>acpi -itc</ACTION>
-	  </COMMAND>
+    <COMMAND name="show system acpi thermal"
+             help="Show ACPI thermal information">
+      <ACTION>acpi -itc</ACTION>
+    </COMMAND>
 
   </VIEW>
 

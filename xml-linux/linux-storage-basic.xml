@@ -6,46 +6,46 @@
 
   <VIEW name="main">
 
-	  <COMMAND name="show storage"
-			       help="Show storage information"/>
+    <COMMAND name="show storage"
+             help="Show storage information"/>
 
-	  <COMMAND name="show storage device"
-			       help="Show storage devices">
-	    <ACTION>lsblk -a</ACTION>
-	  </COMMAND>
+    <COMMAND name="show storage device"
+             help="Show storage devices">
+      <ACTION>lsblk -a</ACTION>
+    </COMMAND>
 
-	  <COMMAND name="show storage device activity"
-			       help="Show device activity">
-	    <ACTION>iostat</ACTION>
-	  </COMMAND>
+    <COMMAND name="show storage device activity"
+             help="Show device activity">
+      <ACTION>iostat</ACTION>
+    </COMMAND>
 
-	  <COMMAND name="show storage device filesystem"
-			       help="Show device filesystems">
-	    <ACTION>lsblk -f</ACTION>
-	  </COMMAND>
+    <COMMAND name="show storage device filesystem"
+             help="Show device filesystems">
+      <ACTION>lsblk -f</ACTION>
+    </COMMAND>
 
-	  <COMMAND name="show storage device statistics"
-			       help="Show device statistics">
-	    <ACTION>vmstat -d</ACTION>
-	  </COMMAND>
+    <COMMAND name="show storage device statistics"
+             help="Show device statistics">
+      <ACTION>vmstat -d</ACTION>
+    </COMMAND>
 
-	  <COMMAND name="show storage file"
-			       help="Show file information"/>
+    <COMMAND name="show storage file"
+             help="Show file information"/>
 
-	  <COMMAND name="show storage file lock"
-			       help="Show file locks">
-	    <ACTION>lslocks</ACTION>
-	  </COMMAND>
+    <COMMAND name="show storage file lock"
+             help="Show file locks">
+      <ACTION>lslocks</ACTION>
+    </COMMAND>
 
-	  <COMMAND name="show storage mounts"
-			       help="Show storage mounts">
-	    <ACTION>findmnt</ACTION>
-	  </COMMAND>
+    <COMMAND name="show storage mounts"
+             help="Show storage mounts">
+      <ACTION>findmnt</ACTION>
+    </COMMAND>
 
-	  <COMMAND name="show storage usage"
-			       help="Show storage usage">
-	    <ACTION>df -h</ACTION>
-	  </COMMAND>
+    <COMMAND name="show storage usage"
+             help="Show storage usage">
+      <ACTION>df -h</ACTION>
+    </COMMAND>
 
   </VIEW>
 

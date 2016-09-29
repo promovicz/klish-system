@@ -4,22 +4,22 @@
  xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
                      http://clish.sourceforge.net/XMLSchema/clish.xsd">
 
-	<PTYPE name="rt_nud"
-		     pattern="all permanent reachable noarp stale"
-		     help="Neighhour state"/>
-	<PTYPE name="rt_tos"
+  <PTYPE name="rt_nud"
+         pattern="all permanent reachable noarp stale"
+         help="Neighhour state"/>
+  <PTYPE name="rt_tos"
          pattern="[[:graph:]]+"
          help="Routing ToS"/>
-	<PTYPE name="rt_protocol"
+  <PTYPE name="rt_protocol"
          pattern="[[:graph:]]+"
          help="Routing protocol"/>
-	<PTYPE name="rt_realm"
+  <PTYPE name="rt_realm"
          pattern="[[:graph:]]+"
          help="Routing realm"/>
-	<PTYPE name="rt_scope"
+  <PTYPE name="rt_scope"
          pattern="[[:graph:]]+"
          help="Routing scope"/>
-	<PTYPE name="rt_table"
+  <PTYPE name="rt_table"
          pattern="[[:graph:]]+"
          help="Routing table"/>
 

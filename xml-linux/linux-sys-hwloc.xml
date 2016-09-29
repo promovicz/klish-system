@@ -6,22 +6,22 @@
 
   <VIEW name="main">
 
-	  <COMMAND name="show system topology"
-			       help="Show system topology">
-	    <PARAM name="verbose"
-			       help="Verbose output"
-			       ptype="string"
-			       value="verbose"
-			       optional="true"/>
-	    <ACTION>
-		    format="console"
-		    options=""
-		    if [ -n "${verbose}" ]; then
-		      options="$options -v"
-		    fi
-		    lstopo --of $format $options
-	    </ACTION>
-	  </COMMAND>
+    <COMMAND name="show system topology"
+             help="Show system topology">
+      <PARAM name="verbose"
+             help="Verbose output"
+             ptype="string"
+             value="verbose"
+             optional="true"/>
+      <ACTION>
+        format="console"
+        options=""
+        if [ -n "${verbose}" ]; then
+          options="$options -v"
+        fi
+        lstopo --of $format $options
+      </ACTION>
+    </COMMAND>
 
   </VIEW>
 

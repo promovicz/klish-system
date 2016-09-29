@@ -6,58 +6,58 @@
 
   <VIEW name="main">
 
-	  <COMMAND name="show system process"
-			       help="Show system processes">
-	    <ACTION>ps -Af cf --sort=uid</ACTION>
-	  </COMMAND>
+    <COMMAND name="show system process"
+             help="Show system processes">
+      <ACTION>ps -Af cf --sort=uid</ACTION>
+    </COMMAND>
 
-	  <COMMAND name="show system cpu"
-			       help="Show system CPU information">
-	    <ACTION>lscpu</ACTION>
-	  </COMMAND>
+    <COMMAND name="show system cpu"
+             help="Show system CPU information">
+      <ACTION>lscpu</ACTION>
+    </COMMAND>
 
-	  <COMMAND name="show system cpu architecture"
-			       help="Show system CPU architecture">
-	    <ACTION>uname -m</ACTION>
-	  </COMMAND>
+    <COMMAND name="show system cpu architecture"
+             help="Show system CPU architecture">
+      <ACTION>uname -m</ACTION>
+    </COMMAND>
 
-	  <COMMAND name="show system cpu usage"
-			       help="Show system CPU usage">
-	    <ACTION>mpstat -P ALL</ACTION>
-	  </COMMAND>
+    <COMMAND name="show system cpu usage"
+             help="Show system CPU usage">
+      <ACTION>mpstat -P ALL</ACTION>
+    </COMMAND>
 
-	  <COMMAND name="show system interrupt"
-			       help="Show system interrupt information">
-	    <ACTION>cat /proc/interrupts</ACTION>
-	  </COMMAND>
+    <COMMAND name="show system interrupt"
+             help="Show system interrupt information">
+      <ACTION>cat /proc/interrupts</ACTION>
+    </COMMAND>
 
-	  <COMMAND name="show system memory"
-			       help="Show system memory information">
-	    <ACTION>free -ht</ACTION>
-	  </COMMAND>
+    <COMMAND name="show system memory"
+             help="Show system memory information">
+      <ACTION>free -ht</ACTION>
+    </COMMAND>
 
-	  <COMMAND name="show system bus"
-			       help="Show system bus information"/>
+    <COMMAND name="show system bus"
+             help="Show system bus information"/>
 
-	  <COMMAND name="show system bus pci"
-			       help="Show PCI information">
-	    <ACTION>lspci</ACTION>
-	  </COMMAND>
+    <COMMAND name="show system bus pci"
+             help="Show PCI information">
+      <ACTION>lspci</ACTION>
+    </COMMAND>
 
-	  <COMMAND name="show system bus usb"
-			       help="Show USB information">
-	    <ACTION>lsusb</ACTION>
-	  </COMMAND>
+    <COMMAND name="show system bus usb"
+             help="Show USB information">
+      <ACTION>lsusb</ACTION>
+    </COMMAND>
 
-	  <COMMAND name="show system sensors"
-			       help="Show system sensors">
-	    <ACTION>sensors</ACTION>
-	  </COMMAND>
+    <COMMAND name="show system sensors"
+             help="Show system sensors">
+      <ACTION>sensors</ACTION>
+    </COMMAND>
 
     <COMMAND name="show system users"
-			       help="Show system users">
-	    <ACTION>w</ACTION>
-	  </COMMAND>
+             help="Show system users">
+      <ACTION>w</ACTION>
+    </COMMAND>
 
   </VIEW>
 

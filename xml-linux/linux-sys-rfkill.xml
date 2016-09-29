@@ -6,8 +6,8 @@
 
   <VIEW name="main">
 
-	  <COMMAND name="show system rfkill"
-			       help="Show system RF-kill switches">
+    <COMMAND name="show system rfkill"
+             help="Show system RF-kill switches">
       <ACTION>rfkill list</ACTION>
     </COMMAND>
 

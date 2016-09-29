@@ -5,28 +5,28 @@
                      http://clish.sourceforge.net/XMLSchema/clish.xsd">
 
   <PTYPE name="ifupdown_interface"
-		     pattern="[[:graph:]]+"
-		     help="Interface or 'all'"/>
+         pattern="[[:graph:]]+"
+         help="Interface or 'all'"/>
   <PTYPE name="ifupdown_mapping"
-		     pattern="[[:graph:]]+"
-		     help="Interface mapping"/>
+         pattern="[[:graph:]]+"
+         help="Interface mapping"/>
 
   <VIEW name="main">
 
-	  <COMMAND name="show network configuration"
-			       help="Show ifupdown configuration">
+    <COMMAND name="show network configuration"
+             help="Show ifupdown configuration">
       <ACTION>cat /etc/network/interfaces</ACTION>
     </COMMAND>
 
-	  <COMMAND name="edit network configuration"
-			       help="Edit ifupdown configuration"
+    <COMMAND name="edit network configuration"
+             help="Edit ifupdown configuration"
              interrupt="true">
-	    <ACTION>sensible-editor /etc/network/interfaces</ACTION>
-	  </COMMAND>
+      <ACTION>sensible-editor /etc/network/interfaces</ACTION>
+    </COMMAND>
 
-	  <COMMAND name="request network startup"
-			       help="Start up an ifupdown interface"
-			       interrupt="true">
+    <COMMAND name="request network startup"
+             help="Start up an ifupdown interface"
+             interrupt="true">
       <PARAM name="interface"
              help="Interface to start up"
              ptype="ifupdown_interface"/>
@@ -64,7 +64,7 @@
              ptype="string"
              value="no-scripts"
              optional="true"/>
-	    <ACTION>
+      <ACTION>
         options=""
         interface="${interface}"
         mapping="${mapping}"
@@ -95,11 +95,11 @@
         fi
         ifup $options $interface
       </ACTION>
-	  </COMMAND>
+    </COMMAND>
 
-	  <COMMAND name="request network shutdown"
-			       help="Shut down an ifupdown interface"
-			       interrupt="true">
+    <COMMAND name="request network shutdown"
+             help="Shut down an ifupdown interface"
+             interrupt="true">
       <PARAM name="interface"
              help="Interface to shut down"
              ptype="ifupdown_interface"/>
@@ -133,7 +133,7 @@
              ptype="string"
              value="no-scripts"
              optional="true"/>
-	    <ACTION>
+      <ACTION>
         options=""
         interface="${interface}"
         mapping="${mapping}"
@@ -164,7 +164,7 @@
         fi
         ifdown $options $interface
       </ACTION>
-	  </COMMAND>
+    </COMMAND>
 
   </VIEW>
 

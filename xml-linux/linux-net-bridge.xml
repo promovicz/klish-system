@@ -6,41 +6,41 @@
 
   <VIEW name="main">
 
-	  <COMMAND name="show bridge"
-			       help="Show bridge information"/>
+    <COMMAND name="show bridge"
+             help="Show bridge information"/>
 
-	  <COMMAND name="show bridge interface"
-			       help="Show bridge interfaces">
-	    <ACTION>brctl show</ACTION>
-	  </COMMAND>
+    <COMMAND name="show bridge interface"
+             help="Show bridge interfaces">
+      <ACTION>brctl show</ACTION>
+    </COMMAND>
 
-	  <COMMAND name="show bridge table"
-			       help="Show bridge MAC table">
-	    <ACTION>bridge fdb show</ACTION>
-	  </COMMAND>
+    <COMMAND name="show bridge table"
+             help="Show bridge MAC table">
+      <ACTION>bridge fdb show</ACTION>
+    </COMMAND>
 
-	  <COMMAND name="show bridge vlan"
-			       help="Show bridge VLAN filters">
-	    <ACTION>bridge vlan show</ACTION>
-	  </COMMAND>
+    <COMMAND name="show bridge vlan"
+             help="Show bridge VLAN filters">
+      <ACTION>bridge vlan show</ACTION>
+    </COMMAND>
 
 
-	  <COMMAND name="monitor bridge"
-			       help="Monitor bridge events"/>
+    <COMMAND name="monitor bridge"
+             help="Monitor bridge events"/>
 
-	  <COMMAND name="monitor bridge interface"
-			       help="Monitor bridge interface events"
-			       pager="false"
-			       interrupt="true">
-	    <ACTION>bridge monitor link</ACTION>
-	  </COMMAND>
+    <COMMAND name="monitor bridge interface"
+             help="Monitor bridge interface events"
+             pager="false"
+             interrupt="true">
+      <ACTION>bridge monitor link</ACTION>
+    </COMMAND>
 
-	  <COMMAND name="monitor bridge table"
-			       help="Monitor bridge table events"
-			       pager="false"
-			       interrupt="true">
-	    <ACTION>bridge monitor fdb</ACTION>
-	  </COMMAND>
+    <COMMAND name="monitor bridge table"
+             help="Monitor bridge table events"
+             pager="false"
+             interrupt="true">
+      <ACTION>bridge monitor fdb</ACTION>
+    </COMMAND>
 
   </VIEW>
 

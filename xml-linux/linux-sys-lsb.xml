@@ -6,8 +6,8 @@
 
   <VIEW name="main">
 
-	  <COMMAND name="show system release"
-			       help="Show system release version">
+    <COMMAND name="show system release"
+             help="Show system release version">
       <ACTION>lsb_release -a</ACTION>
     </COMMAND>
 

@@ -5,28 +5,28 @@
                      http://clish.sourceforge.net/XMLSchema/clish.xsd">
 
   <PTYPE name="dmi_type"
-		     method="select"
+         method="select"
          pattern="all(ALL) bios(0) system(1) baseboard(2) chassis(3) processor(4) cache(7) port(8) slot(9) onboard(10) pma(16) memory(17) battery(22)"
          help="DMI entry type"/>
 
   <VIEW name="main">
 
-	<COMMAND name="show system dmi"
-			 help="Show system DMI information">
-	  <PARAM name="type"
-			 help="Type of information"
-			 ptype="dmi_type"
-			 optional="true"/>
-	  <ACTION>
-		options=""
-		if [ "${type}" != "ALL" ]; then
-		  if [ -n "${type}" ]; then
-		    options="$options -t ${type}"
-		  fi
-		fi
-		dmidecode -q $options
-	  </ACTION>
-	</COMMAND>
+  <COMMAND name="show system dmi"
+       help="Show system DMI information">
+    <PARAM name="type"
+       help="Type of information"
+       ptype="dmi_type"
+       optional="true"/>
+    <ACTION>
+    options=""
+    if [ "${type}" != "ALL" ]; then
+      if [ -n "${type}" ]; then
+        options="$options -t ${type}"
+      fi
+    fi
+    dmidecode -q $options
+    </ACTION>
+  </COMMAND>
 
   </VIEW>
 

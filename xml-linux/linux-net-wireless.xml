@@ -6,23 +6,23 @@
 
   <VIEW name="main">
 
-	  <COMMAND name="show wlan"
-			       help="Show wlan information"/>
+    <COMMAND name="show wlan"
+             help="Show wlan information"/>
 
-	  <COMMAND name="show wlan interface"
-			       help="Show wlan interfaces">
-	    <PARAM name="name"
-			       help="Name of interface"
-			       ptype="net_interface"
-			       optional="true"/>
-	    <ACTION>
-		    options=""
-		    if [ -n "${name}" ]; then
-		      options="$options ${name}"
-		    fi
-		    iwconfig $options
-	    </ACTION>
-	  </COMMAND>
+    <COMMAND name="show wlan interface"
+             help="Show wlan interfaces">
+      <PARAM name="name"
+             help="Name of interface"
+             ptype="net_interface"
+             optional="true"/>
+      <ACTION>
+        options=""
+        if [ -n "${name}" ]; then
+          options="$options ${name}"
+        fi
+        iwconfig $options
+      </ACTION>
+    </COMMAND>
 
   </VIEW>
 

@@ -6,27 +6,27 @@
 
   <VIEW name="main">
 
-	  <COMMAND name="show apt"
-			       help="Show APT package information"/>
+    <COMMAND name="show apt"
+             help="Show APT package information"/>
 
     <COMMAND name="show apt key"
-			       help="Show APT signing keys">
+             help="Show APT signing keys">
       <ACTION>apt-key fingerprint</ACTION>
-	  </COMMAND>
+    </COMMAND>
 
     <COMMAND name="show apt package"
-			       help="Show APT packages">
-	  </COMMAND>
+             help="Show APT packages">
+    </COMMAND>
 
     <COMMAND name="show apt sources"
-			       help="Show APT sources">
-	  </COMMAND>
+             help="Show APT sources">
+    </COMMAND>
 
-	  <COMMAND name="request apt"
-			       help="Request APT package operations"/>
+    <COMMAND name="request apt"
+             help="Request APT package operations"/>
 
     <COMMAND name="request apt update"
-			       help="Request APT repository update"
+             help="Request APT repository update"
              interrupt="true">
       <ACTION>
         apt update
@@ -34,7 +34,7 @@
     </COMMAND>
 
     <COMMAND name="request apt upgrade"
-			       help="Request APT package upgrade"
+             help="Request APT package upgrade"
              interrupt="true">
       <ACTION>
         apt upgrade
