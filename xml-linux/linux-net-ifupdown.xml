@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <PTYPE name="ifupdown_interface"
+		     pattern="[[:graph:]]+"
+		     help="Interface or 'all'"/>
+  <PTYPE name="ifupdown_mapping"
+		     pattern="[[:graph:]]+"
+		     help="Interface mapping"/>
+
+  <VIEW name="main">
+
+	  <COMMAND name="show network configuration"
+			       help="Show ifupdown configuration">
+      <ACTION>cat /etc/network/interfaces</ACTION>
+    </COMMAND>
+
+	  <COMMAND name="edit network configuration"
+			       help="Edit ifupdown configuration"
+             interrupt="true">
+	    <ACTION>sensible-editor /etc/network/interfaces</ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="request network startup"
+			       help="Start up an ifupdown interface"
+			       interrupt="true">
+      <PARAM name="interface"
+             help="Interface to start up"
+             ptype="ifupdown_interface"/>
+      <PARAM name="mapping"
+             help="Mapping to apply"
+             ptype="ifupdown_mapping"
+             prefix="mapping"/>
+      <PARAM name="follow-through"
+             help="Follow-through operation"
+             ptype="string"
+             value="follow-through"
+             optional="true"/>
+      <PARAM name="force"
+             help="Force operation"
+             ptype="string"
+             value="force"
+             optional="true"/>
+      <PARAM name="verbose"
+             help="Verbose operation"
+             ptype="string"
+             value="verbose"
+             optional="true"/>
+      <PARAM name="dry-run"
+             help="Dry-run operation"
+             ptype="string"
+             value="dry-run"
+             optional="true"/>
+      <PARAM name="no-mappings"
+             help="Disable interface mappings"
+             ptype="string"
+             value="no-mappings"
+             optional="true"/>
+      <PARAM name="no-scripts"
+             help="Disable script execution"
+             ptype="string"
+             value="no-scripts"
+             optional="true"/>
+	    <ACTION>
+        options=""
+        interface="${interface}"
+        mapping="${mapping}"
+        if [ -n "${force}" ]; then
+          options="$options --force"
+        fi
+        if [ -n "${follow-through}" ]; then
+          options="$options --ignore-errors"
+        fi
+        if [ -n "${verbose}" ]; then
+          options="$options --verbose"
+        fi
+        if [ -n "${dry-run}" ]; then
+          options="$options --no-act"
+        fi
+        if [ -n "${no-mappings}" ]; then
+          options="$options --no-mappings"
+        fi
+        if [ -n "${no-scripts}" ]; then
+          options="$options --no-scripts"
+        fi
+        if [ "$interface" = "all" ]; then
+          interface="-a"
+        else
+          if [ -n "$mapping" ]; then
+            interface="$interface=$mapping"
+          fi
+        fi
+        ifup $options $interface
+      </ACTION>
+	  </COMMAND>
+
+	  <COMMAND name="request network shutdown"
+			       help="Shut down an ifupdown interface"
+			       interrupt="true">
+      <PARAM name="interface"
+             help="Interface to shut down"
+             ptype="ifupdown_interface"/>
+      <PARAM name="follow-through"
+             help="Follow-through operation"
+             ptype="string"
+             value="follow-through"
+             optional="true"/>
+      <PARAM name="force"
+             help="Force operation"
+             ptype="string"
+             value="force"
+             optional="true"/>
+      <PARAM name="verbose"
+             help="Verbose operation"
+             ptype="string"
+             value="verbose"
+             optional="true"/>
+      <PARAM name="dry-run"
+             help="Dry-run operation"
+             ptype="string"
+             value="dry-run"
+             optional="true"/>
+      <PARAM name="no-mappings"
+             help="Disable interface mappings"
+             ptype="string"
+             value="no-mappings"
+             optional="true"/>
+      <PARAM name="no-scripts"
+             help="Disable script execution"
+             ptype="string"
+             value="no-scripts"
+             optional="true"/>
+	    <ACTION>
+        options=""
+        interface="${interface}"
+        mapping="${mapping}"
+        if [ -n "${force}" ]; then
+          options="$options --force"
+        fi
+        if [ -n "${follow-through}" ]; then
+          options="$options --ignore-errors"
+        fi
+        if [ -n "${verbose}" ]; then
+          options="$options --verbose"
+        fi
+        if [ -n "${dry-run}" ]; then
+          options="$options --no-act"
+        fi
+        if [ -n "${no-mappings}" ]; then
+          options="$options --no-mappings"
+        fi
+        if [ -n "${no-scripts}" ]; then
+          options="$options --no-scripts"
+        fi
+        if [ "$interface" = "all" ]; then
+          interface="-a"
+        else
+          if [ -n "$mapping"]; then
+            interface="$interface=$mapping"
+          fi
+        fi
+        ifdown $options $interface
+      </ACTION>
+	  </COMMAND>
+
+  </VIEW>
+
+</CLISH_MODULE>
