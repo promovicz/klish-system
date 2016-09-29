@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <VIEW name="main">
+
+	  <COMMAND name="show system cpu frequency"
+			       help="Show system CPU frequency information">
+	    <PARAM name="detail"
+			       help="Detailed output"
+			       ptype="string"
+			       value="detail"
+			       optional="true"/>
+	    <ACTION>
+		    options=""
+		    if [ -z "${detail}" ]; then
+		      options="$options -o"
+		    fi
+	  	  cpufreq-info $options
+	    </ACTION>
+	  </COMMAND>
+
+  </VIEW>
+
+</CLISH_MODULE>
