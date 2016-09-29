@@ -7,7 +7,7 @@
   <VIEW name="main">
 
 	  <COMMAND name="show system acpi"
-			       help="Show ACPI information"/>
+			       help="Show system ACPI information"/>
 
 	  <COMMAND name="show system acpi power"
 			       help="Show ACPI power information">

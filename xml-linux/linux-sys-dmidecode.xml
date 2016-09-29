@@ -5,7 +5,7 @@
                      http://clish.sourceforge.net/XMLSchema/clish.xsd">
 
   <PTYPE name="dmi_type"
-		 method="select"
+		     method="select"
          pattern="all(ALL) bios(0) system(1) baseboard(2) chassis(3) processor(4) cache(7) port(8) slot(9) onboard(10) pma(16) memory(17) battery(22)"
          help="DMI entry type"/>
 

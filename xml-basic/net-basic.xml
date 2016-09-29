@@ -12,6 +12,9 @@
 	  <COMMAND name="show network"
 			       help="Show network information"/>
 
+    <COMMAND name="request network"
+			       help="Request network operation"/>
+
   </VIEW>
 
 </CLISH_MODULE>
