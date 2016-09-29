@@ -6,8 +6,8 @@
 
   <VIEW name="main">
 
-	  <COMMAND name="connect snmp"
-			       help="Connect to an SNMP agent">
+    <COMMAND name="connect snmp"
+             help="Connect to an SNMP agent">
       <PARAM name="host"
              ptype="net_hostname"
              help="Host to connect to"/>

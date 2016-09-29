@@ -6,10 +6,10 @@
 
   <VIEW name="main">
 
-	  <COMMAND name="show system uptime"
-			       help="Show system uptime">
-	    <ACTION>uptime</ACTION>
-	  </COMMAND>
+    <COMMAND name="show system uptime"
+             help="Show system uptime">
+      <ACTION>uptime</ACTION>
+    </COMMAND>
 
   </VIEW>
 

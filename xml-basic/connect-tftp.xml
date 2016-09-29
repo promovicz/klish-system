@@ -6,8 +6,8 @@
 
   <VIEW name="main">
 
-	  <COMMAND name="connect tftp"
-			       help="Connect to a tftp server">
+    <COMMAND name="connect tftp"
+             help="Connect to a tftp server">
       <PARAM name="host"
              ptype="net_hostname"
              help="Host to connect to"/>

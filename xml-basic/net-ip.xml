@@ -7,13 +7,13 @@
   <VIEW name="main">
 
     <COMMAND name="show ip"
-			       help="Show IPv4 information"/>
-	  <COMMAND name="show ip multicast"
-			       help="Show IPv4 multicast information"/>
-	  <COMMAND name="show ip tcp"
-			       help="Show IPv4 TCP information"/>
-	  <COMMAND name="show ip udp"
-			       help="Show IPv4 UDP information"/>
+             help="Show IPv4 information"/>
+    <COMMAND name="show ip multicast"
+             help="Show IPv4 multicast information"/>
+    <COMMAND name="show ip tcp"
+             help="Show IPv4 TCP information"/>
+    <COMMAND name="show ip udp"
+             help="Show IPv4 UDP information"/>
 
   </VIEW>
 

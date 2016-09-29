@@ -6,14 +6,14 @@
 
   <VIEW name="main">
 
-	  <COMMAND name="edit network"
-			       help="Edit network configuration"/>
+    <COMMAND name="edit network"
+             help="Edit network configuration"/>
 
-	  <COMMAND name="show network"
-			       help="Show network information"/>
+    <COMMAND name="show network"
+             help="Show network information"/>
 
     <COMMAND name="request network"
-			       help="Request network operation"/>
+             help="Request network operation"/>
 
   </VIEW>
 

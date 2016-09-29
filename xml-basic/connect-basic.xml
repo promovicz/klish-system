@@ -6,8 +6,8 @@
 
   <VIEW name="main">
 
-	  <COMMAND name="connect"
-			       help="Connect to a service"/>
+    <COMMAND name="connect"
+             help="Connect to a service"/>
 
   </VIEW>
 

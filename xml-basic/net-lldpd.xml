@@ -6,23 +6,23 @@
 
   <VIEW name="main">
 
-	  <COMMAND name="show lldp"
-			       help="Show LLDP information"/>
+    <COMMAND name="show lldp"
+             help="Show LLDP information"/>
 
-	  <COMMAND name="show lldp configuration"
-			       help="Show LLDP configuration">
-	    <ACTION>lldpcli show running</ACTION>
-	  </COMMAND>
+    <COMMAND name="show lldp configuration"
+             help="Show LLDP configuration">
+      <ACTION>lldpcli show running</ACTION>
+    </COMMAND>
 
-	  <COMMAND name="show lldp neighbour"
-			       help="Show LLDP neighbours">
-	    <ACTION>lldpcli show neighbor</ACTION>
-	  </COMMAND>
+    <COMMAND name="show lldp neighbour"
+             help="Show LLDP neighbours">
+      <ACTION>lldpcli show neighbor</ACTION>
+    </COMMAND>
 
-	  <COMMAND name="show lldp statistics"
-			       help="Show LLDP statistics">
-	    <ACTION>lldpcli show statistics</ACTION>
-	  </COMMAND>
+    <COMMAND name="show lldp statistics"
+             help="Show LLDP statistics">
+      <ACTION>lldpcli show statistics</ACTION>
+    </COMMAND>
 
   </VIEW>
 

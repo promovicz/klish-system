@@ -28,8 +28,8 @@
          pattern="[[:graph:]]*"
          help="String"/>
   <PTYPE name="subcommand"
-		     pattern="[^\]+"
-		     help="Subcommand"/>
+         pattern="[^\]+"
+         help="Subcommand"/>
 
   <PTYPE name="file"
          pattern="[[:graph:]]*"

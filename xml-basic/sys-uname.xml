@@ -6,10 +6,10 @@
 
   <VIEW name="main">
 
-	  <COMMAND name="show system uname"
-			       help="Show system uname">
-	    <ACTION>uname -a</ACTION>
-	  </COMMAND>
+    <COMMAND name="show system uname"
+             help="Show system uname">
+      <ACTION>uname -a</ACTION>
+    </COMMAND>
 
   </VIEW>
 

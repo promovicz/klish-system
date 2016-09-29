@@ -6,41 +6,41 @@
 
   <VIEW name="main">
 
-	  <COMMAND name="lookup whois"
-			       help="Perform whois lookup"
-			       interrupt="true">
-	    <PARAM name="object"
-			       help="Query"
-			       ptype="string"/>
-	    <PARAM name="server"
-			       help="Server to query"
-			       ptype="string"
-			       prefix="server"
-			       optional="true"/>
-	    <PARAM name="port"
-			       help="Port of server"
-			       ptype="string"
-			       prefix="port"
-			       optional="true"/>
-	    <PARAM name="legal"
-			       help="Show legalese"
-			       ptype="string"
-			       value="legal"
-			       optional="true"/>
-	    <ACTION>
-		    options=""
-		    if [ -n "${server}" ]; then
-		      options="$options -h ${server}"
-		    fi
-		    if [ -n "${port}" ]; then
-		      options="$options -p ${port}"
-		    fi
-		    if [ -z "${legal}" ]; then
-		      options="$options -H"
-		    fi
-		    whois $options "${object}"
-		  </ACTION>
-	  </COMMAND>
+    <COMMAND name="lookup whois"
+             help="Perform whois lookup"
+             interrupt="true">
+      <PARAM name="object"
+             help="Query"
+             ptype="string"/>
+      <PARAM name="server"
+             help="Server to query"
+             ptype="string"
+             prefix="server"
+             optional="true"/>
+      <PARAM name="port"
+             help="Port of server"
+             ptype="string"
+             prefix="port"
+             optional="true"/>
+      <PARAM name="legal"
+             help="Show legalese"
+             ptype="string"
+             value="legal"
+             optional="true"/>
+      <ACTION>
+        options=""
+        if [ -n "${server}" ]; then
+          options="$options -h ${server}"
+        fi
+        if [ -n "${port}" ]; then
+          options="$options -p ${port}"
+        fi
+        if [ -z "${legal}" ]; then
+          options="$options -H"
+        fi
+        whois $options "${object}"
+      </ACTION>
+    </COMMAND>
 
   </VIEW>
 

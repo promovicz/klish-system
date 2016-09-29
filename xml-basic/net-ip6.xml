@@ -6,14 +6,14 @@
 
   <VIEW name="main">
 
-	  <COMMAND name="show ip6"
-			       help="Show IPv6 information"/>
-	  <COMMAND name="show ip6 multicast"
-			       help="Show IPv6 multicast information"/>
-	  <COMMAND name="show ip6 tcp"
-			       help="Show IPv6 TCP information"/>
-	  <COMMAND name="show ip6 udp"
-			       help="Show IPv6 UDP information"/>
+    <COMMAND name="show ip6"
+             help="Show IPv6 information"/>
+    <COMMAND name="show ip6 multicast"
+             help="Show IPv6 multicast information"/>
+    <COMMAND name="show ip6 tcp"
+             help="Show IPv6 TCP information"/>
+    <COMMAND name="show ip6 udp"
+             help="Show IPv6 UDP information"/>
 
   </VIEW>
 

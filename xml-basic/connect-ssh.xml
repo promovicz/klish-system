@@ -6,8 +6,8 @@
 
   <VIEW name="main">
 
-	  <COMMAND name="connect ssh"
-			       help="Connect to an SSH server">
+    <COMMAND name="connect ssh"
+             help="Connect to an SSH server">
       <PARAM name="host"
              ptype="net_hostname"
              help="Host to connect to"/>

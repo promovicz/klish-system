@@ -6,17 +6,17 @@
 
   <VIEW name="main">
 
-	  <COMMAND name="edit"
-			       help="Edit files and objects"/>
+    <COMMAND name="edit"
+             help="Edit files and objects"/>
 
-	  <COMMAND name="monitor"
-			       help="Monitor system changes"/>
+    <COMMAND name="monitor"
+             help="Monitor system changes"/>
 
-	  <COMMAND name="request"
-			       help="Request system operation"/>
+    <COMMAND name="request"
+             help="Request system operation"/>
 
-	  <COMMAND name="show"
-			       help="Show system information"/>
+    <COMMAND name="show"
+             help="Show system information"/>
 
   </VIEW>
 
