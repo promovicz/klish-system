@@ -22,12 +22,14 @@
              ptype="string"
              optional="true"/>
       <ACTION>
-        getent ${database} ${key}
-        case $? in
-        1) echo "Bad query" ;;
-        2) echo "Not found" ;;
-        3) echo "Enumeration not supported" ;;
-        esac
+        (
+          getent ${database} ${key}
+          case $? in
+          1) echo "Bad query" ;;
+          2) echo "Not found" ;;
+          3) echo "Enumeration not supported" ;;
+          esac
+        ) | sensible-pager
       </ACTION>
     </COMMAND>
 
