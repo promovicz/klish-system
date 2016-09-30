@@ -7,7 +7,7 @@
   <PTYPE name="iptables_table"
          method="select"
          pattern="filter nat raw mangle security"
-         help="table"/>
+         help="[table]"/>
 
   <VIEW name="main">
 

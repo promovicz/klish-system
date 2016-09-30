@@ -6,21 +6,21 @@
 
   <PTYPE name="rt_nud"
          pattern="all permanent reachable noarp stale"
-         help="Neighhour state"/>
+         help="[state]"/>
   <PTYPE name="rt_tos"
          pattern="[[:graph:]]+"
-         help="Routing ToS"/>
+         help="[tos]"/>
   <PTYPE name="rt_protocol"
          pattern="[[:graph:]]+"
-         help="Routing protocol"/>
+         help="[protocol]"/>
   <PTYPE name="rt_realm"
          pattern="[[:graph:]]+"
-         help="Routing realm"/>
+         help="[realm]"/>
   <PTYPE name="rt_scope"
          pattern="[[:graph:]]+"
-         help="Routing scope"/>
+         help="[scope]"/>
   <PTYPE name="rt_table"
          pattern="[[:graph:]]+"
-         help="Routing table"/>
+         help="[table]"/>
 
 </CLISH_MODULE>

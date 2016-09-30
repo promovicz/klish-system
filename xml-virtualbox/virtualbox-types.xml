@@ -7,14 +7,14 @@
   <PTYPE name="virtualbox_interface"
          method="select"
          pattern="gui sdl headless"
-         help="Interface"/>
+         help="[user-interface]"/>
 
   <PTYPE name="virtualbox_machine"
          pattern="[[:graph:]]*"
-         help="Machine"/>
+         help="[machine]"/>
 
   <PTYPE name="virtualbox_network"
          pattern="[[:graph:]]*"
-         help="Network"/>
+         help="[network]"/>
 
 </CLISH_MODULE>

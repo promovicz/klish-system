@@ -6,10 +6,10 @@
 
   <PTYPE name="group"
          pattern="[[:graph:]]*"
-         help="Group"/>
+         help="[group]"/>
 
   <PTYPE name="user"
          pattern="[[:graph:]]*"
-         help="User"/>
+         help="[user]"/>
 
 </CLISH_MODULE>

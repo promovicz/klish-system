@@ -7,36 +7,34 @@
   <PTYPE name="boolean"
          method="select"
          pattern="true(1) false(0)"
-         help="Boolean"/>
-
+         help="[boolean]"/>
   <PTYPE name="onoff"
          method="select"
          pattern="on off"
-         help="On-Off"/>
+         help="[on-off]"/>
 
   <PTYPE name="integer"
          pattern="[+-]?[0-9]+"
-         help="Signed integer"/>
+         help="[signed-int]"/>
   <PTYPE name="unsigned"
          pattern="[0-9]+"
-         help="Unsigned integer"/>
+         help="[unsigned-int]"/>
 
   <PTYPE name="line"
          pattern="[[:print:]]*"
-         help="Line"/>
+         help="[line]"/>
   <PTYPE name="string"
          pattern="[[:graph:]]*"
-         help="String"/>
+         help="[string]"/>
   <PTYPE name="subcommand"
          pattern="[^\]+"
-         help="Subcommand"/>
+         help="[subcommand]"/>
 
   <PTYPE name="file"
          pattern="[[:graph:]]*"
-         help="File"/>
-
+         help="[file]"/>
   <PTYPE name="directory"
          pattern="[[:graph:]]*"
-         help="Directory"/>
+         help="[directory]"/>
 
 </CLISH_MODULE>

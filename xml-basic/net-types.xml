@@ -6,40 +6,40 @@
 
   <PTYPE name="net_hostname"
          pattern="[[:graph:]]+"
-         help="Hostname"/>
+         help="[hostname]"/>
   <PTYPE name="net_interface"
          pattern="[[:graph:]]+"
-         help="Interface"/>
+         help="[interface]"/>
 
   <PTYPE name="ip_port"
          method="integer"
          pattern="1..65535"
-         help="Port"/>
+         help="[port]"/>
 
   <PTYPE name="ip4_address"
          pattern="[0-9\.]+"
-         help="IPv4 address"/>
+         help="[ip4-address]"/>
   <PTYPE name="ip4_prefix"
          pattern="[0-9\.]+\/[0-9]+"
-         help="IPv4 prefix"/>
+         help="[ip4-prefix]"/>
 
   <PTYPE name="ip6_address"
          pattern="[0-9a-fA-F:]+"
-         help="IPv6 address"/>
+         help="[ip6-address]"/>
   <PTYPE name="ip6_prefix"
          pattern="[0-9a-fA-F:]+\/[0-9]+"
-         help="IPv6 prefix"/>
+         help="[ip6-prefix]"/>
 
   <PTYPE name="mac_address"
          pattern="[0-9a-fA-F:]+"
-         help="MAC address"/>
+         help="[mac-address]"/>
 
   <PTYPE name="vlan_id"
          method="integer"
          pattern="1..4095"
-         help="VLAN id"/>
+         help="[vlan-id]"/>
   <PTYPE name="vlan_name"
          pattern="[[:graph:]]+"
-         help="VLAN name"/>
+         help="[vlan-name]"/>
 
 </CLISH_MODULE>

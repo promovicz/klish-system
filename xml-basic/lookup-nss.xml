@@ -7,7 +7,7 @@
   <PTYPE name="nss_database"
          method="select"
          pattern="ahosts ahostsv4 ahostsv6 aliases ethers group gshadow hosts initgroups netgroup networks passwd protocols rpc services shadow"
-         help="NSS database"/>
+         help="[nss-database]"/>
 
   <VIEW name="main">
 
