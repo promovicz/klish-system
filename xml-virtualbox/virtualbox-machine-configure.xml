@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <VIEW name="virtualbox">
+
+    <COMMAND name="configure machine"
+             help="Configure a VirtualBox machine"
+             view="virtualbox-configure-machine"
+             viewid="machine=${machine}">
+      <PARAM name="machine"
+             help="Machine to configure"
+             ptype="virtualbox_machine"/>
+    </COMMAND>
+
+  </VIEW>
+
+  <VIEW name="virtualbox-configure-machine"
+        depth="2"
+        prompt="vbox-${machine}&gt;">
+
+    <COMMAND name="set"
+             help="Set a property"
+             interrupt="true"/>
+
+    <COMMAND name="set description"
+             help="Enable/disable ACPI"
+             interrupt="true">
+      <PARAM name="description"
+             help="Set description"
+             ptype="line"/>
+      <ACTION>
+        VBoxManage modifyvm "${machine}" --description "${description}"
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="set cpus"
+             help="Set CPU count"
+             interrupt="true">
+      <PARAM name="count"
+             help="CPU count"
+             ptype="integer"/>
+      <ACTION>
+        VBoxManage modifyvm "${machine}" --cpus "${count}"
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="set memory"
+             help="Set memory size"
+             interrupt="true">
+      <PARAM name="size"
+             help="Memory size in MBytes"
+             ptype="integer"/>
+      <ACTION>
+        VBoxManage modifyvm "${machine}" --memory "${size}"
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="set vram"
+             help="Set VRAM size"
+             interrupt="true">
+      <PARAM name="size"
+             help="VRAM size in MBytes"
+             ptype="integer"/>
+      <ACTION>
+        VBoxManage modifyvm "${machine}" --vram "${size}"
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="set acpi"
+             help="Enable/disable ACPI"
+             interrupt="true">
+      <PARAM name="onoff"
+             help="On or off"
+             ptype="onoff"/>
+      <ACTION>
+        VBoxManage modifyvm "${machine}" --acpi "${onoff}"
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="set ioapic"
+             help="Enable/disable IO-APIC"
+             interrupt="true">
+      <PARAM name="onoff"
+             help="On or off"
+             ptype="onoff"/>
+      <ACTION>
+        VBoxManage modifyvm "${machine}" --ioapic "${onoff}"
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="set hpet"
+             help="Enable/disable HPET"
+             interrupt="true">
+      <PARAM name="onoff"
+             help="On or off"
+             ptype="onoff"/>
+      <ACTION>
+        VBoxManage modifyvm "${machine}" --hpet "${onoff}"
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="set longmode"
+             help="Enable/disable long mode"
+             interrupt="true">
+      <PARAM name="onoff"
+             help="On or off"
+             ptype="onoff"/>
+      <ACTION>
+        VBoxManage modifyvm "${machine}" --longmode "${onoff}"
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="set pae"
+             help="Enable/disable PAE"
+             interrupt="true">
+      <PARAM name="onoff"
+             help="On or off"
+             ptype="onoff"/>
+      <ACTION>
+        VBoxManage modifyvm "${machine}" --pae "${onoff}"
+      </ACTION>
+    </COMMAND>
+
+  </VIEW>
+
+</CLISH_MODULE>
