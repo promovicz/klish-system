@@ -16,10 +16,52 @@
 
     <COMMAND name="show apt package"
              help="Show APT packages">
+      <PARAM name="package"
+             help="Package to show"
+             ptype="debian_package"/>
+      <ACTION>apt show ${package}</ACTION>
+    </COMMAND>
+
+    <COMMAND name="show apt configuration"
+             help="Show APT configuration">
+      <ACTION>
+        showfile() {
+          if [ -f $1 ]; then
+            echo "// File $1"
+            echo
+            cat $1
+            echo
+          fi
+        }
+        showfile /etc/apt/apt.conf
+        for file in /etc/apt/apt.conf.d/*; do
+          showfile $file
+        done
+      </ACTION>
     </COMMAND>
 
     <COMMAND name="show apt sources"
              help="Show APT sources">
+      <ACTION>
+        showfile() {
+          if [ -f $1 ]; then
+            echo "# File $1"
+            cat $1
+            echo
+          fi
+        }
+        showfile /etc/apt/sources.list
+        for file in /etc/apt/sources.list.d/*; do
+          showfile $file
+        done
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="show apt upgradable"
+             help="Show APT upgradable packages">
+      <ACTION>
+        apt list --upgradable
+      </ACTION>
     </COMMAND>
 
     <COMMAND name="request apt"

@@ -6,12 +6,6 @@
 
   <VIEW name="main">
 
-    <COMMAND name="request etckeeper"
-             help="Request etckeeper operation"/>
-
-    <COMMAND name="request etckeeper commit"
-             help="Commit etckeeper state"/>
-
     <COMMAND name="show etckeeper"
              help="Show etckeeper information"/>
 
@@ -25,6 +19,21 @@
              help="Show system configuration status"
              interrupt="true">
       <ACTION>etckeeper vcs status</ACTION>
+    </COMMAND>
+
+    <COMMAND name="request etckeeper"
+             help="Request etckeeper operation"/>
+
+    <COMMAND name="request etckeeper commit"
+             help="Commit etckeeper state">
+      <PARAM name="message"
+             help="Commit message"
+             ptype="line"
+             optional="true"/>
+      <ACTION>
+        message="${message}"
+        etckeeper commit $message
+      </ACTION>
     </COMMAND>
 
   </VIEW>

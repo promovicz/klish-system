@@ -9,15 +9,26 @@
     <COMMAND name="show debconf"
              help="Show debconf information"/>
 
-    <COMMAND name="show debconf databases"
+    <COMMAND name="show debconf configuration"
+             help="Show debconf configuration for a package">
+      <PARAM name="package"
+             help="Package to show"
+             ptype="debian_package"/>
+      <ACTION>debconf-show ${package}</ACTION>
+    </COMMAND>
+
+    <COMMAND name="show debconf database"
              help="Show debconf databases on the system">
       <ACTION>debconf-show --listdbs</ACTION>
     </COMMAND>
 
-    <COMMAND name="show debconf packages"
+    <COMMAND name="show debconf package"
              help="Show debconf packages on the system">
       <ACTION>debconf-show --listowners</ACTION>
     </COMMAND>
+
+    <COMMAND name="request debconf"
+             help="Request debconf operations"/>
 
   </VIEW>
 
