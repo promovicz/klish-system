@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <VIEW name="main">
+
+    <COMMAND name="edit system database"
+             help="Edit system databases"/>
+
+    <COMMAND name="edit system database group"
+             help="Edit system group database"
+             interrupt="true">
+      <ACTION>vipw -g</ACTION>
+    </COMMAND>
+
+    <COMMAND name="edit system database passwd"
+             help="Edit system passwd database"
+             interrupt="true">
+      <ACTION>vipw -p</ACTION>
+    </COMMAND>
+
+    <COMMAND name="edit system database shadow"
+             help="Edit system shadow database"
+             interrupt="true">
+      <ACTION>vipw -s</ACTION>
+    </COMMAND>
+
+  </VIEW>
+
+</CLISH_MODULE>
