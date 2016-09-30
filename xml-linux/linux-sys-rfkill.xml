@@ -11,6 +11,25 @@
       <ACTION>rfkill list</ACTION>
     </COMMAND>
 
+    <COMMAND name="request system rfkill"
+             help="Request RF-kill operations"/>
+
+    <COMMAND name="request system rfkill block"
+             help="Block an RF-kill switch">
+      <PARAM name="switch"
+             ptype="string"
+             help="RF-kill switch to block"/>
+      <ACTION>rfkill block ${switch}</ACTION>
+    </COMMAND>
+
+    <COMMAND name="request system rfkill unblock"
+             help="Unblock an RF-kill switch">
+      <PARAM name="switch"
+             ptype="string"
+             help="RF-kill switch to unblock"/>
+      <ACTION>rfkill unblock ${switch}</ACTION>
+    </COMMAND>
+
   </VIEW>
 
 </CLISH_MODULE>
