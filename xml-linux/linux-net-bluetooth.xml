@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <VIEW name="main">
+
+    <COMMAND name="show bluetooth"
+             help="Show bluetooth information"/>
+
+    <COMMAND name="request bluetooth"
+             help="Request bluetooth operation"/>
+
+    <COMMAND name="show bluetooth interface"
+             help="Show bluetooth interfaces">
+      <PARAM name="interface"
+             help="Interface to show"
+             ptype="net_interface"
+             optional="true"/>
+      <ACTION>
+        hciconfig ${interface}
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="show bluetooth connection"
+             help="Show bluetooth connections">
+      <PARAM name="interface"
+             help="Interface to scan on"
+             ptype="net_interface"
+             optional="true"/>
+      <ACTION>
+        options=""
+        if [ -n "${interface}" ]; then
+          options="$options -i ${interface}"
+        fi
+        hcitool $options con
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="request bluetooth scan"
+             help="Scan for bluetooth devices"
+             interrupt="true">
+      <PARAM name="interface"
+             help="Interface to scan on"
+             ptype="net_interface"
+             optional="true"/>
+      <ACTION>
+        options=""
+        if [ -n "${interface}" ]; then
+          options="$options -i ${interface}"
+        fi
+        hcitool $options scan
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="request bluetooth connect"
+             help="Connect to a bluetooth device"
+             interrupt="true">
+      <PARAM name="interface"
+             help="Interface to scan on"
+             ptype="net_interface"
+             optional="true"/>
+      <PARAM name="device"
+             help="Device to connect to"
+             ptype="mac_address"/>
+      <ACTION>
+        options=""
+        if [ -n "${interface}" ]; then
+          options="$options -i ${interface}"
+        fi
+        hcitool $options cc ${device}
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="request bluetooth disconnect"
+             help="Disconnect from a bluetooth device"
+             interrupt="true">
+      <PARAM name="interface"
+             help="Interface to scan on"
+             ptype="net_interface"
+             optional="true"/>
+      <PARAM name="device"
+             help="Device to disconnect from"
+             ptype="mac_address"/>
+      <ACTION>
+        options=""
+        if [ -n "${interface}" ]; then
+          options="$options -i ${interface}"
+        fi
+        hcitool $options dc ${device}
+      </ACTION>
+    </COMMAND>
+
+  </VIEW>
+
+</CLISH_MODULE>
