@@ -38,7 +38,7 @@
         if [ -z "${legal}" ]; then
           options="$options -H"
         fi
-        whois $options "${object}" | sensible-pager
+        whois $options "${object}" | sysklish-pager
       </ACTION>
     </COMMAND>
 

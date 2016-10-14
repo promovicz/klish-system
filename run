@@ -4,7 +4,7 @@ BASE="$(pwd)"
 SELF="$(realpath $0)"
 ROOT="$(dirname $SELF)"
 
-export PATH="$PATH:/sbin:/usr/sbin"
+export PATH="$ROOT/bin:$PATH:/sbin:/usr/sbin"
 export PAGER="less -XFe"
 export EDITOR="vim"
 export PYTHONPATH="$ROOT"
