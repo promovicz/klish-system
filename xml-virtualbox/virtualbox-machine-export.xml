@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <PTYPE name="virtualbox_export_format"
+         method="select"
+         pattern="legacy09 ovf09 ovf10 ovf20"
+         help="[format]"/>
+
+  <VIEW name="virtualbox">
+
+    <COMMAND name="request machine export"
+             help="Export a VirtualBox machine"
+             interrupt="true">
+      <PARAM name="machine"
+             help="Machine to export"
+             ptype="virtualbox_machine"/>
+      <PARAM name="format"
+             help="Format to export in"
+             default="ovf20"
+             ptype="virtualbox_export_format"/>
+      <PARAM name="to"
+             help="File to export to"
+             ptype="file"/>
+      <ACTION>
+        VBoxManage export "${machine}" --output "${to}" --${format}
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="request machine import"
+             help="Import a VirtualBox machine"
+             interrupt="true">
+      <PARAM name="file"
+             help="File to import"
+             ptype="file"/>
+      <PARAM name="dry-run"
+             value="dry-run"
+             help="Perform a dry run"
+             ptype="string"/>
+      <ACTION>
+        options=""
+        if [ -n "${dry-run}" ]; then
+          options="$options --dry-run"
+        fi
+        VBoxManage import $options "${file}"
+      </ACTION>
+    </COMMAND>
+
+  </VIEW>
+
+</CLISH_MODULE>

@@ -35,12 +35,12 @@
     <COMMAND name="request machine start"
              help="Start a VirtualBox machine"
              interrupt="true">
-      <PARAM name="interface"
-             help="Interface to use"
-             ptype="virtualbox_interface"/>
       <PARAM name="machine"
              help="Machine to start"
              ptype="virtualbox_machine"/>
+      <PARAM name="interface"
+             help="Interface to use"
+             ptype="virtualbox_interface"/>
       <ACTION>
         VBoxManage startvm "${machine}" --type "${interface}"
       </ACTION>

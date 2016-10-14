@@ -19,14 +19,14 @@
 
   <VIEW name="virtualbox-configure-machine"
         depth="2"
-        prompt="vbox-${machine}&gt;">
+        prompt="vbox/machine/${machine}&gt;">
 
     <COMMAND name="set"
-             help="Set a property"
+             help="Set an option"
              interrupt="true"/>
 
     <COMMAND name="set description"
-             help="Enable/disable ACPI"
+             help="Set system description"
              interrupt="true">
       <PARAM name="description"
              help="Set description"
@@ -36,40 +36,10 @@
       </ACTION>
     </COMMAND>
 
-    <COMMAND name="set cpus"
-             help="Set CPU count"
-             interrupt="true">
-      <PARAM name="count"
-             help="CPU count"
-             ptype="integer"/>
-      <ACTION>
-        VBoxManage modifyvm "${machine}" --cpus "${count}"
-      </ACTION>
-    </COMMAND>
+    <COMMAND name="set system"
+             help="Set a system option"/>
 
-    <COMMAND name="set memory"
-             help="Set memory size"
-             interrupt="true">
-      <PARAM name="size"
-             help="Memory size in MBytes"
-             ptype="integer"/>
-      <ACTION>
-        VBoxManage modifyvm "${machine}" --memory "${size}"
-      </ACTION>
-    </COMMAND>
-
-    <COMMAND name="set vram"
-             help="Set VRAM size"
-             interrupt="true">
-      <PARAM name="size"
-             help="VRAM size in MBytes"
-             ptype="integer"/>
-      <ACTION>
-        VBoxManage modifyvm "${machine}" --vram "${size}"
-      </ACTION>
-    </COMMAND>
-
-    <COMMAND name="set acpi"
+    <COMMAND name="set system acpi"
              help="Enable/disable ACPI"
              interrupt="true">
       <PARAM name="onoff"
@@ -80,29 +50,32 @@
       </ACTION>
     </COMMAND>
 
-    <COMMAND name="set ioapic"
-             help="Enable/disable IO-APIC"
+    <COMMAND name="set system cpu"
+             help="Set a CPU option"/>
+
+    <COMMAND name="set system cpu count"
+             help="Set CPU count"
              interrupt="true">
+      <PARAM name="count"
+             help="CPU count"
+             ptype="integer"/>
+      <ACTION>
+        VBoxManage modifyvm "${machine}" --cpus "${count}"
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="set system cpu hotplug"
+             help="Enable/disable CPU hotplug">
       <PARAM name="onoff"
              help="On or off"
              ptype="onoff"/>
       <ACTION>
-        VBoxManage modifyvm "${machine}" --ioapic "${onoff}"
+        VBoxManage modifyvm "${machine}" --cpuhotplug "${onoff}"
       </ACTION>
     </COMMAND>
 
-    <COMMAND name="set hpet"
-             help="Enable/disable HPET"
-             interrupt="true">
-      <PARAM name="onoff"
-             help="On or off"
-             ptype="onoff"/>
-      <ACTION>
-        VBoxManage modifyvm "${machine}" --hpet "${onoff}"
-      </ACTION>
-    </COMMAND>
 
-    <COMMAND name="set longmode"
+    <COMMAND name="set system cpu long"
              help="Enable/disable long mode"
              interrupt="true">
       <PARAM name="onoff"
@@ -113,7 +86,7 @@
       </ACTION>
     </COMMAND>
 
-    <COMMAND name="set pae"
+    <COMMAND name="set system cpu pae"
              help="Enable/disable PAE"
              interrupt="true">
       <PARAM name="onoff"
@@ -121,6 +94,67 @@
              ptype="onoff"/>
       <ACTION>
         VBoxManage modifyvm "${machine}" --pae "${onoff}"
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="set system memory"
+             help="Set a memory option"/>
+
+    <COMMAND name="set system memory pagefusion"
+             help="Enable/disable page fusion"
+             interrupt="true">
+      <PARAM name="onoff"
+             help="On or off"
+             ptype="onoff"/>
+      <ACTION>
+        VBoxManage modifyvm "${machine}" --pagefusion "${onoff}"
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="set system memory size"
+             help="Set memory size"
+             interrupt="true">
+      <PARAM name="size"
+             help="Memory size in MBytes"
+             ptype="integer"/>
+      <ACTION>
+        VBoxManage modifyvm "${machine}" --memory "${size}"
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="set system hpet"
+             help="Enable/disable HPET"
+             interrupt="true">
+      <PARAM name="onoff"
+             help="On or off"
+             ptype="onoff"/>
+      <ACTION>
+        VBoxManage modifyvm "${machine}" --hpet "${onoff}"
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="set system ioapic"
+             help="Enable/disable IO-APIC"
+             interrupt="true">
+      <PARAM name="onoff"
+             help="On or off"
+             ptype="onoff"/>
+      <ACTION>
+        VBoxManage modifyvm "${machine}" --ioapic "${onoff}"
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="set graphics"
+             help="Set a graphics option"/>
+
+    <COMMAND name="set graphics memory"
+             help="Set VRAM size"
+             interrupt="true">
+      <PARAM name="size"
+             help="VRAM size in MBytes"
+             ptype="integer"/>
+      <ACTION>
+        VBoxManage modifyvm "${machine}" --vram "${size}"
       </ACTION>
     </COMMAND>
 
