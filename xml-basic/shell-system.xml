@@ -6,22 +6,10 @@
 
   <VIEW name="main">
 
-    <COMMAND name="interact system"
-             help="Start system shell"
+    <COMMAND name="interact shell"
+             help="Interact with a system shell"
              interrupt="true">
       <ACTION>$SHELL</ACTION>
-    </COMMAND>
-
-    <COMMAND name="interact bash"
-             help="Start system bash"
-             interrupt="true">
-      <ACTION>bash</ACTION>
-    </COMMAND>
-
-    <COMMAND name="interact sh"
-             help="Start system sh"
-             interrupt="true">
-      <ACTION>sh</ACTION>
     </COMMAND>
 
   </VIEW>
