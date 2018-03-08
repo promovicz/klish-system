@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <VIEW name="main">
+
+    <COMMAND name="lookup man"
+             help="Lookup a manual page">
+      <PARAM name="name"
+             help="Name of the manual page"
+             ptype="string"/>
+      <PARAM name="section"
+             help="Section of the manual page"
+             ptype="integer"
+             prefix="section"
+             optional="true"
+             default=""/>
+      <ACTION>
+        man ${section} ${name}
+      </ACTION>
+    </COMMAND>
+
+  </VIEW>
+
+</CLISH_MODULE>
