@@ -8,6 +8,7 @@ an engineered appliance.
 
 There are about enough commands to make this feel like a useful
 operations CLI, however many commands don't even have any options.
+
 Please send patches by pull request.
 
 Commands are provided for:
