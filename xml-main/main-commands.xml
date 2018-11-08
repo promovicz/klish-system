@@ -7,16 +7,16 @@
   <VIEW name="main">
 
     <COMMAND name="edit"
-             help="Edit files and objects"/>
+             help="Edit something"/>
 
     <COMMAND name="monitor"
-             help="Monitor system changes"/>
+             help="Monitor changes"/>
 
     <COMMAND name="request"
-             help="Request system operation"/>
+             help="Request operations"/>
 
     <COMMAND name="show"
-             help="Show system information"/>
+             help="Show information"/>
 
   </VIEW>
 

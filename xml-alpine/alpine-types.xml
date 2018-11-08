@@ -4,14 +4,8 @@
  xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
                      http://clish.sourceforge.net/XMLSchema/clish.xsd">
 
-  <VIEW name="main">
-
-    <COMMAND name="interact shell"
-             help="Interact with system shell"
-             interrupt="true">
-      <ACTION>$SHELL</ACTION>
-    </COMMAND>
-
-  </VIEW>
+  <PTYPE name="apk_package"
+         pattern="[[:graph:]]*"
+         help="[package]"/>
 
 </CLISH_MODULE>

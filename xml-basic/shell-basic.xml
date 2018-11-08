@@ -7,7 +7,7 @@
   <VIEW name="main">
 
     <COMMAND name="interact"
-             help="Interact with another shell"/>
+             help="Interactitve shells"/>
 
   </VIEW>
 

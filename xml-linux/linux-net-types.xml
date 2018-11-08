@@ -5,6 +5,7 @@
                      http://clish.sourceforge.net/XMLSchema/clish.xsd">
 
   <PTYPE name="rt_nud"
+         method="select"
          pattern="all permanent reachable noarp stale"
          help="[state]"/>
   <PTYPE name="rt_tos"

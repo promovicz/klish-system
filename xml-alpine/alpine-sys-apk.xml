@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <VIEW name="main">
+
+    <COMMAND name="show apk"
+             help="Show apk package information"/>
+
+    <COMMAND name="show apk key"
+             help="Show apk signing keys">
+      <ACTION></ACTION>
+    </COMMAND>
+
+    <COMMAND name="show apk package"
+             help="Show apk packages">
+      <PARAM name="package"
+             help="Package to show"
+             ptype="apk_package"/>
+      <ACTION>
+        apk info ${package}
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="show apt installed"
+             help="Show installed apk packages">
+      <ACTION>
+          apk info | sort
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="show apk repository"
+             help="Show apk repositories">
+      <ACTION></ACTION>
+    </COMMAND>
+
+    <COMMAND name="request apk"
+             help="Request apk package operations"/>
+
+    <COMMAND name="request apk add"
+             help="Request apk package install"
+             interrupt="true">
+      <PARAM name="package"
+             help="Package to install"
+             ptype="apk_package"/>
+      <ACTION>
+        apk add ${package}
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="request apk remove"
+             help="Request apk package removal"
+             interrupt="true">
+      <PARAM name="package"
+             help="Package to remove"
+             ptype="apk_package"/>
+      <ACTION>
+        apk rm ${package}
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="request apk update"
+             help="Request apk repository update"
+             interrupt="true">
+      <ACTION>
+        apk update ${package}
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="request apk upgrade"
+             help="Request apk package upgrade"
+             interrupt="true">
+      <ACTION>
+        apk upgrade
+      </ACTION>
+    </COMMAND>
+
+  </VIEW>
+
+</CLISH_MODULE>

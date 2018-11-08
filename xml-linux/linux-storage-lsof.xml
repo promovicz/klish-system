@@ -7,7 +7,8 @@
   <VIEW name="main">
 
     <COMMAND name="show storage file handle"
-             help="Show file handles">
+             help="Show file handles"
+             interrupt="true">
       <PARAM name="file"
              help="Show handles for file"
              prefix="file"
@@ -35,7 +36,7 @@
         if [ -n "${user}" ]; then
           options="$options -u ${user}"
         fi
-        lsof $options -- $file
+        lsof $options -- $file | sysklish-pager
       </ACTION>
     </COMMAND>
 

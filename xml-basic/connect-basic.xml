@@ -7,7 +7,7 @@
   <VIEW name="main">
 
     <COMMAND name="connect"
-             help="Connect to a service"/>
+             help="Connect to something"/>
 
   </VIEW>
 

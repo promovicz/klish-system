@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <VIEW name="main">
+
+    <COMMAND name="show lbu"
+             help="Show lbu information"/>
+
+    <COMMAND name="show lbu list"
+             help="Show lbu list of files">
+      <ACTION>
+        lbu list
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="request lbu"
+             help="Request lbu operations"/>
+
+    <COMMAND name="request lbu commit"
+             help="Request lbu commit"
+             interrupt="true">
+      <ACTION>
+        lbu commit
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="request lbu exclude"
+             help="Request lbu exclude"
+             interrupt="true">
+      <ACTION>
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="request lbu include"
+             help="Request lbu include"
+             interrupt="true">
+      <ACTION>
+      </ACTION>
+    </COMMAND>
+
+  </VIEW>
+
+</CLISH_MODULE>

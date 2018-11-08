@@ -7,7 +7,7 @@
   <VIEW name="main">
 
     <COMMAND name="lookup"
-             help="Perform lookup in database">
+             help="Perform lookup">
     </COMMAND>
 
   </VIEW>

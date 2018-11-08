@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <VIEW name="main">
+
+    <COMMAND name="show system status"
+             help="Show systemd status">
+      <ACTION>
+        systemctl status
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="show system unit"
+             help="Show systemd units">
+      <ACTION>
+        systemctl list-units
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="show system job"
+             help="Show systemd jobs">
+      <ACTION>
+        systemctl list-jobs
+      </ACTION>
+    </COMMAND>
+
+	<COMMAND name="show system session"
+	         help="Show logind sessions">
+	  <ACTION>
+	    loginctl
+	  </ACTION>
+	</COMMAND>
+
+    <COMMAND name="show system socket"
+             help="Show systemd sockets">
+      <ACTION>
+        systemctl list-sockets
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="show system timer"
+             help="Show systemd timers">
+      <ACTION>
+        systemctl list-timers
+      </ACTION>
+    </COMMAND>
+
+  </VIEW>
+
+</CLISH_MODULE>

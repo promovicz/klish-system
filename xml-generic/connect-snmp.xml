@@ -6,10 +6,17 @@
 
   <VIEW name="main">
 
-    <COMMAND name="interact shell"
-             help="Interact with system shell"
-             interrupt="true">
-      <ACTION>$SHELL</ACTION>
+    <COMMAND name="connect snmp"
+             help="Connect to an SNMP agent">
+      <PARAM name="host"
+             ptype="net_hostname"
+             help="Host to connect to"/>
+      <PARAM name="port"
+             prefix="port"
+             ptype="ip_port"
+             help="Port to connect to"/>
+      <ACTION>
+      </ACTION>
     </COMMAND>
 
   </VIEW>

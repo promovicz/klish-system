@@ -1,3 +1,6 @@
 
+import clish
+
 def help_commands(params):
-    pass
+    view = clish.shell.view
+    print("View %s:" % view.name)

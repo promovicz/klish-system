@@ -67,7 +67,7 @@
         if [ -n "${state}" ]; then
           selector="$selector nud ${state}"
         fi
-        ip -4 neigh show ${selector}
+        ip -4 neigh show $selector
       </ACTION>
     </COMMAND>
 

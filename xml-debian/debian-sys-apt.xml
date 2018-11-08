@@ -19,7 +19,23 @@
       <PARAM name="package"
              help="Package to show"
              ptype="debian_package"/>
-      <ACTION>apt show ${package}</ACTION>
+      <ACTION>
+        apt show ${package}
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="show apt installed"
+             help="Show installed APT packages">
+      <ACTION>
+          apt list --installed
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="show apt upgradable"
+             help="Show upgradable APT packages">
+      <ACTION>
+          apt list --upgradable
+      </ACTION>
     </COMMAND>
 
     <COMMAND name="show apt configuration"
@@ -54,13 +70,6 @@
         for file in /etc/apt/sources.list.d/*; do
           showfile $file
         done
-      </ACTION>
-    </COMMAND>
-
-    <COMMAND name="show apt upgradable"
-             help="Show APT upgradable packages">
-      <ACTION>
-        apt list --upgradable
       </ACTION>
     </COMMAND>
 

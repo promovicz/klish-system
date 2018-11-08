@@ -31,6 +31,11 @@
       <ACTION>cat /proc/interrupts</ACTION>
     </COMMAND>
 
+    <COMMAND name="show system ipc"
+             help="Show system ipc information">
+      <ACTION>ipcs</ACTION>
+    </COMMAND>
+
     <COMMAND name="show system memory"
              help="Show system memory information">
       <ACTION>free -ht</ACTION>
@@ -49,7 +54,7 @@
       <ACTION>lsusb</ACTION>
     </COMMAND>
 
-    <COMMAND name="show system sensors"
+    <COMMAND name="show system sensor"
              help="Show system sensors">
       <ACTION>sensors</ACTION>
     </COMMAND>
