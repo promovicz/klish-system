@@ -6,8 +6,8 @@
 
   <VIEW name="main">
 
-    <COMMAND name="interact"
-             help="Interactitve shells"/>
+    <COMMAND name="start"
+             help="Interactive programs"/>
 
   </VIEW>
 

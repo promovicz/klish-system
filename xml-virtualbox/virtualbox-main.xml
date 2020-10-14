@@ -12,8 +12,8 @@
                prefix="virtualbox"
                prefix_help="VirtualBox commands"/>
 
-    <COMMAND name="interact virtualbox"
-             help="Enter VirtualBox shell"
+    <COMMAND name="start virtualbox"
+             help="Start VirtualBox shell"
              view="virtualbox"
              viewid=""/>
 

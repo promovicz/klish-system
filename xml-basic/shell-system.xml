@@ -6,10 +6,10 @@
 
   <VIEW name="main">
 
-    <COMMAND name="interact shell"
-             help="Interact with system shell"
+    <COMMAND name="start shell"
+             help="Start system shell"
              interrupt="true">
-      <ACTION>$SHELL</ACTION>
+      <ACTION>exec $SHELL</ACTION>
     </COMMAND>
 
   </VIEW>
