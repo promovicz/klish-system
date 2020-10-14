@@ -27,12 +27,12 @@
       </ACTION>
     </COMMAND>
 
-	<COMMAND name="show system session"
-	         help="Show logind sessions">
-	  <ACTION>
-	    loginctl
-	  </ACTION>
-	</COMMAND>
+    <COMMAND name="show system session"
+             help="Show logind sessions">
+      <ACTION>
+        loginctl
+      </ACTION>
+    </COMMAND>
 
     <COMMAND name="show system socket"
              help="Show systemd sockets">

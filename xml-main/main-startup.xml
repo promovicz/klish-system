@@ -6,15 +6,14 @@
 
   <!-- Start in "main" view with a banner -->
   <STARTUP view="main" pager="true">
-    <DETAIL>
+<DETAIL>
  ____ ____ ____ ____ ____ ____ ____ ____
 ||s |||y |||s |||k |||l |||i |||s |||h ||
 ||__|||__|||__|||__|||__|||__|||__|||__||
 |/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|
-    </DETAIL>
+</DETAIL>
     <ACTION>
 echo "Welcome on $(hostname), logged in as $(whoami)."
-echo ""
     </ACTION>
   </STARTUP>
 
