@@ -12,6 +12,9 @@
                prefix="virtualbox"
                prefix_help="VirtualBox commands"/>
 
+    <COMMAND name="virtualbox"
+             help="VirtualBox commands"/>
+
     <COMMAND name="start virtualbox"
              help="Start VirtualBox shell"
              view="virtualbox"
