@@ -17,7 +17,7 @@
              prefix="section"
              optional="true"
              default=""/>
-      <ACTION>
+      <ACTION interrupt="true">
         man ${section} ${name}
       </ACTION>
     </COMMAND>

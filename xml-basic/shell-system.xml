@@ -7,9 +7,8 @@
   <VIEW name="main">
 
     <COMMAND name="start shell"
-             help="Start system shell"
-             interrupt="true">
-      <ACTION>exec $SHELL</ACTION>
+             help="Start system shell">
+      <ACTION interrupt="true">exec $SHELL</ACTION>
     </COMMAND>
 
   </VIEW>

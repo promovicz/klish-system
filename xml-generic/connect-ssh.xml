@@ -15,7 +15,7 @@
              prefix="port"
              ptype="ip_port"
              help="Port to connect to"/>
-      <ACTION>
+      <ACTION interrupt="true">
         options=""
         if [ -n "${port}" ]; then
           options="$options -P ${port}"

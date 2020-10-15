@@ -77,17 +77,15 @@
              help="Request APT package operations"/>
 
     <COMMAND name="request apt update"
-             help="Request APT repository update"
-             interrupt="true">
-      <ACTION>
+             help="Request APT repository update">
+      <ACTION interrupt="true">
         apt update
       </ACTION>
     </COMMAND>
 
     <COMMAND name="request apt upgrade"
-             help="Request APT package upgrade"
-             interrupt="true">
-      <ACTION>
+             help="Request APT package upgrade">
+      <ACTION interrupt="true">
         apt upgrade
       </ACTION>
     </COMMAND>

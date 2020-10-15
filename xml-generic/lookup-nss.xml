@@ -12,8 +12,7 @@
   <VIEW name="main">
 
     <COMMAND name="lookup nss"
-             help="Perform NSS lookup"
-             interrupt="true">
+             help="Perform NSS lookup">
       <PARAM name="database"
              help="Database to query"
              ptype="nss_database"/>
@@ -21,7 +20,7 @@
              help="Key to query for"
              ptype="string"
              optional="true"/>
-      <ACTION>
+      <ACTION interrupt="true">
         (
           getent ${database} ${key}
           case $? in

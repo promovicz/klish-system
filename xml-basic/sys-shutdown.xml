@@ -18,7 +18,8 @@
              ptype="string"
              help="Message to post"/>
       <ACTION>
-	shutdown -P +${delay} ${message}
+	message="${message}"
+	shutdown -P "+${delay}" $message
       </ACTION>
     </COMMAND>
 
@@ -34,7 +35,8 @@
              ptype="string"
              help="Message to post"/>
       <ACTION>
-	shutdown -r +${delay} ${message}
+	message="${message}"
+	shutdown -r "+${delay}" $message
       </ACTION>
     </COMMAND>
 

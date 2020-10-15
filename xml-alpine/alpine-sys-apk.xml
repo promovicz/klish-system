@@ -40,23 +40,21 @@
              help="Request apk package operations"/>
 
     <COMMAND name="request apk add"
-             help="Request apk package install"
-             interrupt="true">
+             help="Request apk package install">
       <PARAM name="package"
              help="Package to install"
              ptype="apk_package"/>
-      <ACTION>
+      <ACTION interrupt="true">
         apk add ${package}
       </ACTION>
     </COMMAND>
 
     <COMMAND name="request apk remove"
-             help="Request apk package removal"
-             interrupt="true">
+             help="Request apk package removal">
       <PARAM name="package"
              help="Package to remove"
              ptype="apk_package"/>
-      <ACTION>
+      <ACTION interrupt="true">
         apk rm ${package}
       </ACTION>
     </COMMAND>
@@ -64,15 +62,14 @@
     <COMMAND name="request apk update"
              help="Request apk repository update"
              interrupt="true">
-      <ACTION>
+      <ACTION interrupt="true">
         apk update ${package}
       </ACTION>
     </COMMAND>
 
     <COMMAND name="request apk upgrade"
-             help="Request apk package upgrade"
-             interrupt="true">
-      <ACTION>
+             help="Request apk package upgrade">
+      <ACTION interrupt="true">
         apk upgrade
       </ACTION>
     </COMMAND>

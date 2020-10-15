@@ -19,14 +19,12 @@
     </COMMAND>
 
     <COMMAND name="edit network configuration"
-             help="Edit ifupdown configuration"
-             interrupt="true">
-      <ACTION>sysklish-editor /etc/network/interfaces</ACTION>
+             help="Edit ifupdown configuration">
+      <ACTION interrupt="true">sysklish-editor /etc/network/interfaces</ACTION>
     </COMMAND>
 
-    <COMMAND name="request network startup"
-             help="Start up an ifupdown interface"
-             interrupt="true">
+    <COMMAND name="request network start"
+             help="Start up an ifupdown interface">
       <PARAM name="interface"
              help="Interface to start up"
              ptype="ifupdown_interface"/>
@@ -64,7 +62,7 @@
              ptype="string"
              value="no-scripts"
              optional="true"/>
-      <ACTION>
+      <ACTION interrupt="true">
         options=""
         interface="${interface}"
         mapping="${mapping}"
@@ -98,8 +96,7 @@
     </COMMAND>
 
     <COMMAND name="request network shutdown"
-             help="Shut down an ifupdown interface"
-             interrupt="true">
+             help="Shut down an ifupdown interface">
       <PARAM name="interface"
              help="Interface to shut down"
              ptype="ifupdown_interface"/>
@@ -133,7 +130,7 @@
              ptype="string"
              value="no-scripts"
              optional="true"/>
-      <ACTION>
+      <ACTION interrupt="true">
         options=""
         interface="${interface}"
         mapping="${mapping}"

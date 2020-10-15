@@ -10,15 +10,13 @@
              help="Show etckeeper information"/>
 
     <COMMAND name="show etckeeper log"
-             help="Show system configuration log"
-             interrupt="true">
-      <ACTION>etckeeper vcs log</ACTION>
+             help="Show system configuration log">
+      <ACTION interrupt="true">etckeeper vcs log</ACTION>
     </COMMAND>
 
     <COMMAND name="show etckeeper status"
-             help="Show system configuration status"
-             interrupt="true">
-      <ACTION>etckeeper vcs status</ACTION>
+             help="Show system configuration status">
+      <ACTION interrupt="true">etckeeper vcs status</ACTION>
     </COMMAND>
 
     <COMMAND name="request etckeeper"
@@ -30,7 +28,7 @@
              help="Commit message"
              ptype="line"
              optional="true"/>
-      <ACTION>
+      <ACTION interrupt="true">
         message="${message}"
         etckeeper commit $message
       </ACTION>

@@ -7,8 +7,7 @@
   <VIEW name="main">
 
     <COMMAND name="lookup whois"
-             help="Perform whois lookup"
-             interrupt="true">
+             help="Perform whois lookup">
       <PARAM name="object"
              help="Query"
              ptype="string"/>
@@ -27,7 +26,7 @@
              ptype="string"
              value="legal"
              optional="true"/>
-      <ACTION>
+      <ACTION interrupt="true">
         options=""
         if [ -n "${server}" ]; then
           options="$options -h ${server}"

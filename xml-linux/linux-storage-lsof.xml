@@ -7,8 +7,7 @@
   <VIEW name="main">
 
     <COMMAND name="show storage file handle"
-             help="Show file handles"
-             interrupt="true">
+             help="Show file handles">
       <PARAM name="file"
              help="Show handles for file"
              prefix="file"
@@ -24,7 +23,7 @@
              prefix="user"
              ptype="user"
              optional="true"/>
-      <ACTION>
+      <ACTION interrupt="true">
         file=""
         options=""
         if [ -n "${file}" ]; then
