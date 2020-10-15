@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+
+  <VIEW name="main">
+
+    <COMMAND name="request system shutdown"
+             help="Request system shutdown">
+      <PARAM name="delay"
+             ptype="integer"
+	     prefix="delay"
+	     default="0"
+             help="Delay until shutdown"/>
+      <PARAM name="message"
+             prefix="message"
+             ptype="string"
+             help="Message to post"/>
+      <ACTION>
+	shutdown -P +${delay} ${message}
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="request system reboot"
+             help="Request system reboot">
+      <PARAM name="delay"
+             ptype="integer"
+	     prefix="delay"
+	     default="0"
+             help="Delay until shutdown"/>
+      <PARAM name="message"
+             prefix="message"
+             ptype="string"
+             help="Message to post"/>
+      <ACTION>
+	shutdown -r +${delay} ${message}
+      </ACTION>
+    </COMMAND>
+
+  </VIEW>
+
+</CLISH_MODULE>
