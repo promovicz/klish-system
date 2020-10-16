@@ -4,6 +4,11 @@
  xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
                      http://clish.sourceforge.net/XMLSchema/clish.xsd">
 
+	<PTYPE name="systemd_mode"
+	       help="System mode"
+	       method="select"
+	       pattern="default emergency rescue"/>
+
   <VIEW name="main">
 
     <COMMAND name="show system status"
@@ -27,6 +32,13 @@
       </ACTION>
     </COMMAND>
 
+    <COMMAND name="show system journal"
+             help="Show systemd journal">
+      <ACTION>
+        journalctl --system
+      </ACTION>
+    </COMMAND>
+
     <COMMAND name="show system session"
              help="Show logind sessions">
       <ACTION>
@@ -45,6 +57,45 @@
              help="Show systemd timers">
       <ACTION>
         systemctl list-timers
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="request system daemon-reload"
+             help="Request a systemd reload">
+      <ACTION>
+        systemctl daemon-reload
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="request system mode"
+             help="Request a change in system mode">
+      <PARAM name="mode"
+             help="Mode to enter"
+             ptype="systemd_mode"/>
+      <ACTION>
+        systemctl "${mode}"
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="request system switch-root"
+             help="Request a systemd mode change">
+      <PARAM name="root"
+             help="New root directory"
+             ptype="directory"/>
+      <PARAM name="init"
+             help="New init program"
+             ptype="path"
+             optional="true"
+             default=""/>
+      <ACTION>
+        systemctl switch-root "${root}" "${init}"
+      </ACTION>
+    </COMMAND>
+
+    <COMMAND name="monitor system journal"
+             help="Monitor systemd journal">
+      <ACTION interactive="true" interrupt="true">
+        journalctl --system -f
       </ACTION>
     </COMMAND>
 
