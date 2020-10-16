@@ -6,19 +6,37 @@
 
   <VIEW name="main">
 
+    <COMMAND name="lookup apropos"
+             help="Search for a manual page">
+      <PARAM name="keyword"
+             help="Keyword to search for"
+             ptype="string"/>
+      <PARAM name="section"
+             help="Section of the manual page"
+             ptype="unsigned"
+             optional="true"
+             default=""/>
+      <ACTION>
+        options=""
+        if [ -n "${section}" ]; then
+          options="$options -s ${section}"
+        fi
+        apropos $options "${keyword}"
+      </ACTION>
+    </COMMAND>
+
     <COMMAND name="lookup man"
-             help="Lookup a manual page">
+             help="Display a manual page">
       <PARAM name="name"
              help="Name of the manual page"
              ptype="string"/>
       <PARAM name="section"
              help="Section of the manual page"
-             ptype="integer"
-             prefix="section"
+             ptype="unsigned"
              optional="true"
              default=""/>
       <ACTION interactive="true">
-        man ${section} ${name}
+        man "${section}" "${name}"
       </ACTION>
     </COMMAND>
 
