@@ -4,30 +4,29 @@
  xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
                      http://clish.sourceforge.net/XMLSchema/clish.xsd">
 
-  <COMMAND name="quit"
-           help="Quit this shell">
-    <ACTION builtin="clish_nested_up"/>
-  </COMMAND>
+	<COMMAND name="quit"
+		 help="Quit">
+		<ACTION builtin="clish_nested_up"/>
+	</COMMAND>
 
-  <COMMAND name="quit session"
-           help="Quit the shell entirely">
-    <ACTION builtin="clish_close"/>
-  </COMMAND>
+	<COMMAND name="quit session"
+		 help="Quit the shell entirely">
+		<ACTION builtin="clish_close"/>
+	</COMMAND>
 
-  <COMMAND name="escape"
-           help="Return to the main shell"
-           view="main"
-           viewid="">
-  </COMMAND>
+	<COMMAND name="escape"
+		 help="Return to the main shell"
+		 view="main">
+	</COMMAND>
 
-  <COMMAND name="history"
-           help="Display command history">
-    <PARAM name="limit"
-           help="Number of entries to show (zero means all)"
-           optional="true"
-           ptype="unsigned"
-           default="25"/>
-    <ACTION builtin="clish_history">${limit}</ACTION>
-  </COMMAND>
+	<COMMAND name="history"
+		 help="Display command history">
+		<PARAM name="limit"
+		       help="Number of entries to show (zero means all)"
+		       optional="true"
+		       ptype="unsigned"
+		       default="10"/>
+		<ACTION builtin="clish_history">${limit}</ACTION>
+	</COMMAND>
 
 </CLISH_MODULE>

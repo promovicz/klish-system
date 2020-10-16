@@ -4,37 +4,41 @@
  xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
                      http://clish.sourceforge.net/XMLSchema/clish.xsd">
 
-  <PTYPE name="boolean"
-         method="select"
-         pattern="true(1) false(0)"
-         help="[boolean]"/>
-  <PTYPE name="onoff"
-         method="select"
-         pattern="on off"
-         help="[on-off]"/>
+	<PTYPE name="boolean"
+               method="select"
+               pattern="true false"
+               help="[boolean]"/>
+	<PTYPE name="onoff"
+               method="select"
+               pattern="on off"
+               help="[on/off]"/>
 
-  <PTYPE name="integer"
-         pattern="[+-]?[0-9]+"
-         help="[signed-int]"/>
-  <PTYPE name="unsigned"
-         pattern="[0-9]+"
-         help="[unsigned-int]"/>
+	<PTYPE name="integer"
+               pattern="[+-]?[0-9]+"
+               help="[signed-int]"/>
+	<PTYPE name="unsigned"
+               pattern="[0-9]+"
+               help="[unsigned]"/>
 
-  <PTYPE name="line"
-         pattern="[[:print:]]*"
-         help="[line]"/>
-  <PTYPE name="string"
-         pattern="[[:graph:]]*"
-         help="[string]"/>
-  <PTYPE name="subcommand"
-         pattern="[^\]+"
-         help="[subcommand]"/>
+	<PTYPE name="line"
+               pattern="[[:print:]]*"
+               help="[line]"/>
+	<PTYPE name="string"
+               pattern="[[:graph:]]*"
+               help="[string]"/>
 
-  <PTYPE name="file"
-         pattern="[[:graph:]]*"
-         help="[file]"/>
-  <PTYPE name="directory"
-         pattern="[[:graph:]]*"
-         help="[directory]"/>
+	<PTYPE name="subcommand"
+               pattern="[^\]+"
+               help="[subcommand]"/>
+
+	<PTYPE name="path"
+               pattern="[[:graph:]]*"
+               help="[path]"/>
+	<PTYPE name="file"
+               pattern="[[:graph:]]*"
+               help="[file]"/>
+	<PTYPE name="directory"
+               pattern="[[:graph:]]*"
+               help="[directory]"/>
 
 </CLISH_MODULE>

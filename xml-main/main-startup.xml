@@ -4,17 +4,9 @@
  xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
                      http://clish.sourceforge.net/XMLSchema/clish.xsd">
 
-  <!-- Start in "main" view with a banner -->
-  <STARTUP view="main" default_pager="true">
-<DETAIL>
- ____ ____ ____ ____ ____ ____ ____ ____
-||s |||y |||s |||k |||l |||i |||s |||h ||
-||__|||__|||__|||__|||__|||__|||__|||__||
-|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|
-</DETAIL>
-    <ACTION>
-echo "Welcome on $(hostname), logged in as $(whoami)."
-    </ACTION>
-  </STARTUP>
+	<STARTUP view="main">
+		<DETAIL></DETAIL>
+		<ACTION></ACTION>
+	</STARTUP>
 
 </CLISH_MODULE>

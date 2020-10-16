@@ -4,8 +4,9 @@
  xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
                      http://clish.sourceforge.net/XMLSchema/clish.xsd">
 
-  <!-- This defines the "main" view -->
-  <VIEW name="main" prompt="${HOSTNAME}&gt; ">
-  </VIEW>
+	<VIEW name="main" prompt="&gt; ">
+		<COMMAND name="quit" help="Quit from main view">
+		</COMMAND>
+	</VIEW>
 
 </CLISH_MODULE>
