@@ -29,15 +29,13 @@
              help="Monitor bridge events"/>
 
     <COMMAND name="monitor bridge interface"
-             help="Monitor bridge interface events"
-             pager="false">
-      <ACTION interrupt="true">bridge monitor link</ACTION>
+             help="Monitor bridge interface events">
+      <ACTION interactive="true">bridge monitor link</ACTION>
     </COMMAND>
 
     <COMMAND name="monitor bridge table"
-             help="Monitor bridge table events"
-             pager="false">
-      <ACTION interrupt="true">bridge monitor fdb</ACTION>
+             help="Monitor bridge table events">
+      <ACTION interactive="true">bridge monitor fdb</ACTION>
     </COMMAND>
 
   </VIEW>

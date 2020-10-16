@@ -44,7 +44,7 @@
       <PARAM name="package"
              help="Package to install"
              ptype="apk_package"/>
-      <ACTION interrupt="true">
+      <ACTION interactive="true">
         apk add ${package}
       </ACTION>
     </COMMAND>
@@ -54,22 +54,21 @@
       <PARAM name="package"
              help="Package to remove"
              ptype="apk_package"/>
-      <ACTION interrupt="true">
+      <ACTION interactive="true">
         apk rm ${package}
       </ACTION>
     </COMMAND>
 
     <COMMAND name="request apk update"
-             help="Request apk repository update"
-             interrupt="true">
-      <ACTION interrupt="true">
+             help="Request apk repository update">
+      <ACTION interactive="true">
         apk update ${package}
       </ACTION>
     </COMMAND>
 
     <COMMAND name="request apk upgrade"
              help="Request apk package upgrade">
-      <ACTION interrupt="true">
+      <ACTION interactive="true">
         apk upgrade
       </ACTION>
     </COMMAND>

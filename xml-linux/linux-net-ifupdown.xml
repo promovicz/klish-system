@@ -20,7 +20,7 @@
 
     <COMMAND name="edit network configuration"
              help="Edit ifupdown configuration">
-      <ACTION interrupt="true">sysklish-editor /etc/network/interfaces</ACTION>
+      <ACTION interactive="true">sysklish-editor /etc/network/interfaces</ACTION>
     </COMMAND>
 
     <COMMAND name="request network start"

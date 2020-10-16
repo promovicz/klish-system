@@ -5,10 +5,10 @@ SELF="$(realpath $0)"
 ROOT="$(dirname $SELF)"
 
 export PATH="$ROOT/bin:$PATH:/sbin:/usr/sbin"
-export PAGER="less -XFe"
+export CLISH_PAGER="less -XFe"
 export EDITOR="vim"
-export PYTHONPATH="$ROOT"
-export CLISH_PATH="$ROOT/xml-basic:$ROOT/xml-development:$ROOT/xml-generic:$ROOT/xml-debian:$ROOT/xml-linux:$ROOT/xml-main"
+export PYTHONPATH="$ROOT:/usr/local/stow/klish/lib/python3.7/site-packages"
+export CLISH_PATH="$ROOT/xml-main::$ROOT/xml-basic:$ROOT/xml-generic:$ROOT/xml-linux:$ROOT/xml-debian"
 
 # run clish
-$WRAP clish $@
+exec $WRAP clish $@

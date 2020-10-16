@@ -78,14 +78,14 @@
 
     <COMMAND name="request apt update"
              help="Request APT repository update">
-      <ACTION interrupt="true">
+      <ACTION interactive="true">
         apt update
       </ACTION>
     </COMMAND>
 
     <COMMAND name="request apt upgrade"
              help="Request APT package upgrade">
-      <ACTION interrupt="true">
+      <ACTION interactive="true">
         apt upgrade
       </ACTION>
     </COMMAND>

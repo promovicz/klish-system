@@ -39,13 +39,12 @@
     </COMMAND>
 
     <COMMAND name="request bluetooth scan"
-             help="Scan for bluetooth devices"
-             interrupt="true">
+             help="Scan for bluetooth devices">
       <PARAM name="interface"
              help="Interface to scan on"
              ptype="net_interface"
              optional="true"/>
-      <ACTION>
+      <ACTION interrupt="true">
         options=""
         if [ -n "${interface}" ]; then
           options="$options -i ${interface}"
@@ -55,8 +54,7 @@
     </COMMAND>
 
     <COMMAND name="request bluetooth connect"
-             help="Connect to a bluetooth device"
-             interrupt="true">
+             help="Connect to a bluetooth device">
       <PARAM name="interface"
              help="Interface to scan on"
              ptype="net_interface"
@@ -64,7 +62,7 @@
       <PARAM name="device"
              help="Device to connect to"
              ptype="mac_address"/>
-      <ACTION>
+      <ACTION interrupt="true">
         options=""
         if [ -n "${interface}" ]; then
           options="$options -i ${interface}"
@@ -74,8 +72,7 @@
     </COMMAND>
 
     <COMMAND name="request bluetooth disconnect"
-             help="Disconnect from a bluetooth device"
-             interrupt="true">
+             help="Disconnect from a bluetooth device">
       <PARAM name="interface"
              help="Interface to scan on"
              ptype="net_interface"
@@ -83,7 +80,7 @@
       <PARAM name="device"
              help="Device to disconnect from"
              ptype="mac_address"/>
-      <ACTION>
+      <ACTION interrupt="true">
         options=""
         if [ -n "${interface}" ]; then
           options="$options -i ${interface}"

@@ -8,7 +8,7 @@
 
     <COMMAND name="start shell"
              help="Start system shell">
-      <ACTION interrupt="true">exec $SHELL</ACTION>
+      <ACTION interactive="true">exec $SHELL</ACTION>
     </COMMAND>
 
   </VIEW>

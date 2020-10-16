@@ -205,63 +205,63 @@
 
     <COMMAND name="monitor ip"
              help="Monitor IPv4 events">
-      <ACTION interrupt="true">ip -f inet monitor all</ACTION>
+      <ACTION interactive="true">ip -f inet monitor all</ACTION>
     </COMMAND>
 
     <COMMAND name="monitor ip interface"
              help="Monitor IPv4 interfaces">
-      <ACTION interrupt="true">ip -f inet monitor link address</ACTION>
+      <ACTION interactive="true">ip -f inet monitor link address</ACTION>
     </COMMAND>
 
     <COMMAND name="monitor ip neighbour"
              help="Monitor IPv4 neighbours">
-      <ACTION interrupt="true">ip -f inet monitor neigh</ACTION>
+      <ACTION interactive="true">ip -f inet monitor neigh</ACTION>
     </COMMAND>
 
     <COMMAND name="monitor ip route"
              help="Monitor IPv4 routes">
-      <ACTION interrupt="true">ip -f inet monitor route mroute</ACTION>
+      <ACTION interactive="true">ip -f inet monitor route mroute</ACTION>
     </COMMAND>
 
     <COMMAND name="monitor ip route multicast"
              help="Monitor IPv4 multicast routes">
-      <ACTION interrupt="true">ip -f inet monitor mroute</ACTION>
+      <ACTION interactive="true">ip -f inet monitor mroute</ACTION>
     </COMMAND>
 
     <COMMAND name="monitor ip route unicast"
              help="Monitor IPv4 unicast routes">
-      <ACTION interrupt="true">ip -f inet monitor route</ACTION>
+      <ACTION interactive="true">ip -f inet monitor route</ACTION>
     </COMMAND>
 
 
     <COMMAND name="monitor ip6"
              help="Monitor IPv6 events">
-      <ACTION interrupt="true">ip -f inet6 monitor all</ACTION>
+      <ACTION interactive="true">ip -f inet6 monitor all</ACTION>
     </COMMAND>
 
     <COMMAND name="monitor ip6 interface"
              help="Monitor IPv6 interfaces">
-      <ACTION interrupt="true">ip -f inet6 monitor link address</ACTION>
+      <ACTION interactive="true">ip -f inet6 monitor link address</ACTION>
     </COMMAND>
 
     <COMMAND name="monitor ip6 neighbour"
              help="Monitor IPv6 neighbours">
-      <ACTION interrupt="true">ip -f inet6 monitor neigh</ACTION>
+      <ACTION interactive="true">ip -f inet6 monitor neigh</ACTION>
     </COMMAND>
 
     <COMMAND name="monitor ip6 route"
              help="Monitor IPv6 routes">
-      <ACTION interrupt="true">ip -f inet6 monitor route mroute</ACTION>
+      <ACTION interactive="true">ip -f inet6 monitor route mroute</ACTION>
     </COMMAND>
 
     <COMMAND name="monitor ip6 route multicast"
              help="Monitor IPv6 multicast routes">
-      <ACTION interrupt="true">ip -f inet6 monitor mroute</ACTION>
+      <ACTION interactive="true">ip -f inet6 monitor mroute</ACTION>
     </COMMAND>
 
     <COMMAND name="monitor ip6 route unicast"
              help="Monitor IPv6 unicast routes">
-      <ACTION interrupt="true">ip -f inet6 monitor route</ACTION>
+      <ACTION interactive="true">ip -f inet6 monitor route</ACTION>
     </COMMAND>
 
   </VIEW>

@@ -28,7 +28,7 @@
              help="Commit message"
              ptype="line"
              optional="true"/>
-      <ACTION interrupt="true">
+      <ACTION interactive="true">
         message="${message}"
         etckeeper commit $message
       </ACTION>

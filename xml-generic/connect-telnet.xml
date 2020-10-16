@@ -15,7 +15,7 @@
              prefix="port"
              ptype="ip_port"
              help="Port to connect to"/>
-      <ACTION interrupt="true">
+      <ACTION interactive="true">
         portopt=""
         if [ -n "${port}" ]; then
           portopt="${port}"

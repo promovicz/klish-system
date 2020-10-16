@@ -21,20 +21,20 @@
 
     <COMMAND name="request lbu commit"
              help="Request lbu commit">
-      <ACTION interrupt="true">
+      <ACTION interactive="true">
         lbu commit
       </ACTION>
     </COMMAND>
 
     <COMMAND name="request lbu exclude"
              help="Request lbu exclude">
-      <ACTION interrupt="true">
+      <ACTION interactive="true">
       </ACTION>
     </COMMAND>
 
     <COMMAND name="request lbu include"
              help="Request lbu include">
-      <ACTION interrupt="true">
+      <ACTION interactive="true">
       </ACTION>
     </COMMAND>
 

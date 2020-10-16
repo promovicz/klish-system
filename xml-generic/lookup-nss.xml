@@ -21,14 +21,12 @@
              ptype="string"
              optional="true"/>
       <ACTION interrupt="true">
-        (
-          getent ${database} ${key}
-          case $? in
-          1) echo "Bad query" ;;
-          2) echo "Not found" ;;
-          3) echo "Enumeration not supported" ;;
-          esac
-        ) | sysklish-pager
+        getent ${database} ${key}
+        case $? in
+        1) echo "Bad query" ;;
+        2) echo "Not found" ;;
+        3) echo "Enumeration not supported" ;;
+        esac
       </ACTION>
     </COMMAND>
 

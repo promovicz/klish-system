@@ -5,7 +5,7 @@
                      http://clish.sourceforge.net/XMLSchema/clish.xsd">
 
   <!-- Start in "main" view with a banner -->
-  <STARTUP view="main" pager="true">
+  <STARTUP view="main" default_pager="true">
 <DETAIL>
  ____ ____ ____ ____ ____ ____ ____ ____
 ||s |||y |||s |||k |||l |||i |||s |||h ||
